@@ -4,19 +4,19 @@
 
 ## Learning Objectives
 
-- Understand that `CLAUDE.md` contains project instructions loaded across sessions.
+- Understand that `CODEBUDDY.md` contains project instructions loaded across sessions.
 - Distinguish persistent rules from one-time tasks.
 - Verify that the Agent has read the Memory.
 
 ## Step 1: Inspect Memory
 
-Enter in Claude Code:
+Enter in CodeBuddy Code:
 
 ```text
 /memory
 ```
 
-Select the project Memory and inspect the root-level `CLAUDE.md`.
+Select the project Memory and inspect the root-level `CODEBUDDY.md`.
 
 If opening an editor is inconvenient in the classroom environment, enter:
 
@@ -44,23 +44,23 @@ Expected result: the Agent should refuse to hide material uncertainty and point 
 
 | Content | Where It Belongs |
 |---|---|
-| Every executive page must lead with the conclusion | `CLAUDE.md` |
+| Every executive page must lead with the conclusion | `CODEBUDDY.md` |
 | Rename the title to “Southeast Asia Decision Room” today | Current conversation |
 | A complete decision-dashboard production workflow | Skill |
-| A real customer password or API key | Nowhere |
+| A real customer password or access token | Nowhere |
 
 ## Key Reminder
 
-`CLAUDE.md` is not a document repository. It enters every session, so it should be short, explicit, and broadly applicable. Put long workflows in Skills; path-specific rules can go in `.claude/rules/`.
+`CODEBUDDY.md` is not a document repository. It enters every session, so it should be short, explicit, and broadly applicable. Put long workflows in Skills; path-specific rules can go in `.codebuddy/rules/`.
 
 ## Checkpoint
 
 Enter:
 
 ```text
-If I restart Claude Code tomorrow, which project constraints will still apply, and why?
+If I restart CodeBuddy Code tomorrow, which project constraints will still apply, and why?
 ```
 
-The Agent should mention that the project-level `CLAUDE.md` loads automatically.
+The Agent should mention that the project-level `CODEBUDDY.md` loads automatically.
 
 Next: [`03-skills.md`](03-skills.md)

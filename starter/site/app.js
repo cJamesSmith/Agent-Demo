@@ -1,4 +1,4 @@
-// Student starting point: ask Claude Code to extract fictional data from inputs/ and implement the interactions.
+// Student starting point: ask CodeBuddy Code to extract fictional data from inputs/ and implement the interactions.
 
 const markets = [];
 const scenarios = {};

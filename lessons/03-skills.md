@@ -10,13 +10,13 @@
 
 ## Step 1: List Skills
 
-Enter in Claude Code:
+Enter in CodeBuddy Code:
 
 ```text
 /skills
 ```
 
-Find `executive-dashboard`. If it does not appear, enter `/reload-skills` and try again.
+Find `executive-dashboard`. If it does not appear, restart the CodeBuddy Code session and try again.
 
 ## Step 2: Invoke It Explicitly
 
@@ -29,7 +29,7 @@ Enter:
 Then ask:
 
 ```text
-What concrete methods does this Skill add for this project that CLAUDE.md alone does not provide?
+What concrete methods does this Skill add for this project that CODEBUDDY.md alone does not provide?
 ```
 
 Expected topics include scoring rules, page structure, evidence labels, recommendations and counterarguments, and sensitivity analysis.
@@ -39,7 +39,7 @@ Expected topics include scoring rules, page structure, evidence labels, recommen
 The Skill directory contains:
 
 ```text
-.claude/skills/executive-dashboard/
+.codebuddy/skills/executive-dashboard/
 ├── SKILL.md
 ├── references/scoring.md
 └── templates/page-outline.md

@@ -8,7 +8,7 @@ The checker uses only the Python standard library. It verifies that the course s
 python3 checks/check-project.py setup
 ```
 
-Validates the input materials, eight lessons, `CLAUDE.md`, the Skill, and three read-only Subagents.
+Validates the input materials, eight lessons, `CODEBUDDY.md`, the Skill, and three read-only Subagents.
 
 ## Check the Student Site
 

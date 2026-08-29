@@ -1,6 +1,6 @@
 # 72-Hour Global Expansion Decision Room
 
-This Claude Code learning project uses entirely fictional data. Its goal is to transform the business materials in `inputs/` into an interactive executive decision dashboard.
+This CodeBuddy Code learning project uses entirely fictional data. Its goal is to transform the business materials in `inputs/` into an interactive executive decision dashboard.
 
 ## Audience and Communication
 

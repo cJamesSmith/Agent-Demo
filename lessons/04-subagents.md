@@ -20,13 +20,13 @@ All three roles are read-only and do not modify the website directly.
 
 ## Step 2: Delegate in Parallel
 
-Enter in Claude Code:
+Enter in CodeBuddy Code:
 
 ```text
-Please execute @prompts/delegate-analysis.txt
+Please execute @prompts/delegate-analysis.txt. Run the three named Subagents as parallel background tasks, wait for all three results, and then synthesize them.
 ```
 
-Check whether three background Agents appear in the task view. Do not let three Agents edit the same files simultaneously. They produce analysis; the main Agent synthesizes and implements it.
+Check that CodeBuddy starts all three background tasks and later reports all three results. You can use `/agents` to inspect the configured roles. Do not let three Agents edit the same files simultaneously. They produce analysis; the main Agent synthesizes and implements it.
 
 ## Step 3: Request Synthesis
 

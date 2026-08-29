@@ -4,30 +4,32 @@
 
 ## Learning Objectives
 
-- Understand that Claude Code can read and work with an entire project, not just answer questions.
+- Understand that CodeBuddy Code can read and work with an entire project, not just answer questions.
 - Confirm that the course files are complete.
 - Build the habit of defining the outcome and constraints before prescribing code.
 
 ## Step 1: Enter the Project
 
+Download or install CodeBuddy Code using the official [installation guide](https://www.codebuddy.ai/docs/zh/cli/installation). The official [quick-start guide](https://www.codebuddy.ai/docs/zh/cli/quickstart) covers sign-in and first launch. CodeBuddy Code supports macOS, Linux, and Windows. If you install it through npm, use Node.js 18.20 or later.
+
 Run in the terminal:
 
 ```bash
-cd /Users/bytedance/Agent-Demo
-claude
+cd /path/to/Agent-Demo
+codebuddy
 ```
 
-If you already have a Claude Code session open in this directory, you do not need to restart it.
+On first launch, select the appropriate CodeBuddy site and finish browser sign-in. If you already have a CodeBuddy Code session open in this directory, you do not need to restart it. This course is already configured, so do not run `/init`; it could replace the prepared project Memory.
 
 ## Step 2: Ask the Agent to Introduce the Project
 
-Enter in Claude Code:
+Enter in CodeBuddy Code:
 
 ```text
 Do not modify any files yet. Explore this project and tell me in no more than eight lines:
 1. What is my business task?
 2. What input materials are available?
-3. Which Claude Code capabilities are configured in the project?
+3. Which CodeBuddy Code capabilities are configured in the project?
 4. What must I ultimately deliver?
 ```
 
@@ -54,7 +56,7 @@ You should now be able to answer:
 
 ## Troubleshooting
 
-- `claude` is not found: install and sign in to Claude Code first.
+- `codebuddy` is not found: confirm Node.js 18.20 or later, install CodeBuddy Code with `npm install -g @tencent-ai/codebuddy-code`, then run `codebuddy` and sign in.
 - The checker reports missing files: do not create replacement files yourself; ask the instructor to redistribute the course directory.
 
 Next: [`01-planning.md`](01-planning.md)

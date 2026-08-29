@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Structural checks for the Claude Code learning project."""
+"""Structural checks for the CodeBuddy Code learning project."""
 
 from __future__ import annotations
 
@@ -10,19 +10,19 @@ ROOT = Path(__file__).resolve().parents[1]
 
 SETUP_FILES = [
     "README.md",
-    "CLAUDE.md",
+    "CODEBUDDY.md",
     "COURSE-GUIDE.md",
     "inputs/market-data.csv",
     "inputs/customer-interviews.md",
     "inputs/competitor-analysis.md",
     "inputs/risk-memo.md",
     "inputs/data-dictionary.md",
-    ".claude/skills/executive-dashboard/SKILL.md",
-    ".claude/skills/executive-dashboard/references/scoring.md",
-    ".claude/skills/executive-dashboard/templates/page-outline.md",
-    ".claude/agents/market-analyst.md",
-    ".claude/agents/cfo-challenger.md",
-    ".claude/agents/executive-designer.md",
+    ".codebuddy/skills/executive-dashboard/SKILL.md",
+    ".codebuddy/skills/executive-dashboard/references/scoring.md",
+    ".codebuddy/skills/executive-dashboard/templates/page-outline.md",
+    ".codebuddy/agents/market-analyst.md",
+    ".codebuddy/agents/cfo-challenger.md",
+    ".codebuddy/agents/executive-designer.md",
 ]
 
 LESSON_FILES = [f"lessons/{index:02d}-{name}.md" for index, name in enumerate([
@@ -35,6 +35,13 @@ LESSON_FILES = [f"lessons/{index:02d}-{name}.md" for index, name in enumerate([
     "slash-commands",
     "reflect",
 ])]
+
+UNSUPPORTED_LESSON_TOKENS = [
+    "/diff",
+    "/run",
+    "/reload-skills",
+    "/code-review high",
+]
 
 SITE_MARKERS = {
     "index.html": [
@@ -125,19 +132,51 @@ def check_no_external_reference_assets() -> list[str]:
     return failures
 
 
-def run_setup() -> list[str]:
-    print("\n[Course and Claude Code Configuration]")
-    failures = check_files(SETUP_FILES + LESSON_FILES)
-
-    claude_md = (ROOT / "CLAUDE.md").read_text(encoding="utf-8")
-    if "fictional" in claude_md.lower() and "fact" in claude_md.lower() and "assumption" in claude_md.lower():
-        pass_line("CLAUDE.md includes truthfulness and evidence rules")
+def check_codebuddy_lessons() -> list[str]:
+    failures = []
+    combined = "\n".join(
+        (ROOT / relative_path).read_text(encoding="utf-8")
+        for relative_path in LESSON_FILES
+    )
+    found = [token for token in UNSUPPORTED_LESSON_TOKENS if token in combined]
+    if found:
+        fail_line(f"Lessons contain legacy or unsupported instructions: {', '.join(found)}")
+        failures.extend(f"lessons:{token}" for token in found)
     else:
-        fail_line("CLAUDE.md is missing truthfulness or evidence rules")
-        failures.append("CLAUDE.md:rules")
+        pass_line("Lessons contain no known legacy or unsupported commands")
+
+    required = [
+        "codebuddy",
+        "CODEBUDDY.md",
+        ".codebuddy/skills/",
+        "Shift+Tab",
+        "/agents",
+        "/code-review site/",
+        "/rewind",
+    ]
+    missing = [token for token in required if token not in combined]
+    if missing:
+        fail_line(f"Lessons are missing CodeBuddy workflow markers: {', '.join(missing)}")
+        failures.extend(f"lessons:{token}" for token in missing)
+    else:
+        pass_line("Lessons include the required CodeBuddy workflow")
+    return failures
+
+
+def run_setup() -> list[str]:
+    print("\n[Course and CodeBuddy Code Configuration]")
+    failures = check_files(SETUP_FILES + LESSON_FILES)
+    failures.extend(check_codebuddy_lessons())
+
+    codebuddy_md = (ROOT / "CODEBUDDY.md").read_text(encoding="utf-8")
+    if "fictional" in codebuddy_md.lower() and "fact" in codebuddy_md.lower() and "assumption" in codebuddy_md.lower():
+        pass_line("CODEBUDDY.md includes truthfulness and evidence rules")
+    else:
+        fail_line("CODEBUDDY.md is missing truthfulness or evidence rules")
+        failures.append("CODEBUDDY.md:rules")
 
     for agent_name in ("market-analyst", "cfo-challenger", "executive-designer"):
-        content = (ROOT / f".claude/agents/{agent_name}.md").read_text(encoding="utf-8")
+        content = (ROOT / f".codebuddy/agents/{agent_name}.md").read_text(encoding="utf-8")
         if "tools: Read, Grep, Glob" in content:
             pass_line(f"{agent_name} uses read-only tools")
         else:

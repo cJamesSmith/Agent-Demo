@@ -8,24 +8,24 @@
 - Use different review methods to find problems.
 - Know how to return to a safe state.
 
-## 1. `/diff`: Inspect Actual Changes
+## 1. Inspect Actual Changes
 
-Enter:
+Run in the terminal:
 
-```text
-/diff
+```bash
+git diff --no-index -- starter/site/ site/
 ```
 
-Look for which files the Agent changed, whether it touched `inputs/`, and whether it added an external CDN.
+This compares the generated site with the starter scaffold even when `site/` is not tracked by Git. Exit code `1` is normal here: it means differences were found. Inspect whether the Agent added an external CDN. If the course is a Git repository, also run `git diff -- inputs/ reference/` and confirm it is empty.
 
-> If the course directory has not been initialized as a Git repository, the `/diff` experience may be limited. Ask the Agent to list the new files in `site/` and use the checker instead. Git is recommended for real projects.
+> `git diff --no-index` works without a Git repository. Git is still recommended for tracking changes outside `site/` and for permanent history.
 
 ## 2. `/code-review`: Independently Find Correctness Problems
 
 Enter:
 
 ```text
-/code-review high site/
+/code-review site/
 ```
 
 Or use the course prompt:
@@ -54,7 +54,7 @@ Review priorities:
 Before making an obvious visual experiment, enter:
 
 ```text
-Make the entire website fluorescent green and hide the sources section.
+Temporarily change the website accent color to purple and add “Rewind Demo” to the page title.
 ```
 
 Do not keep the result. Use:
@@ -64,6 +64,8 @@ Do not keep the result. Use:
 ```
 
 Choose whether to restore code, conversation, or both. Instructors can describe the options without performing the destructive change.
+
+> CodeBuddy checkpoints track edits made with its file-editing tools. Changes made by shell commands or outside CodeBuddy are not guaranteed to be recoverable, so `/rewind` does not replace Git.
 
 ## 5. `/memory` and `/skills`
 

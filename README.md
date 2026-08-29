@@ -1,6 +1,6 @@
 # 72-Hour Global Expansion Decision Room
 
-> A hands-on course for learning the core Claude Code workflow by building a real web page.
+> A hands-on course for learning the core CodeBuddy Code workflow by building a real web page.
 
 ## Your Role
 
@@ -10,7 +10,7 @@ You are not a programmer. You are the company's head of international business. 
 2. What evidence supports the recommendation?
 3. Does the conclusion still hold when strategic priorities change?
 
-You will use Claude Code to turn the fictional business materials in `inputs/` into an interactive executive decision dashboard.
+You will use CodeBuddy Code to turn the fictional business materials in `inputs/` into an interactive executive decision dashboard.
 
 ## What You Will Learn
 
@@ -39,8 +39,8 @@ You will produce a `site/` directory containing:
 ```text
 inputs/       Fictional business materials for the Agent to read
 lessons/      Lessons for students to complete in order
-prompts/      Prompts ready to copy into Claude Code
-.claude/      Skills and Subagents beyond Memory
+prompts/      Prompts ready to copy into CodeBuddy Code
+.codebuddy/   Skills and Subagents beyond Memory
 starter/      Incomplete website scaffold
 checks/       Checkpoint validation tools
 reference/    Instructor fallback implementation (do not open yet)
@@ -61,15 +61,15 @@ Open these files in order:
 
 A standard class takes about 60–90 minutes. Instructors can use the accelerated path in `COURSE-GUIDE.md` to reduce it to 25–35 minutes.
 
-## Optional ModelScope API Setup
+## Get CodeBuddy Code
 
-If you want to run Claude Code with a free ModelScope-hosted model, follow the [ModelScope API setup guide](api_README.md). This setup is optional and separate from the course workflow.
+Download or install CodeBuddy Code from the official [installation guide](https://www.codebuddy.ai/docs/zh/cli/installation). The [quick-start guide](https://www.codebuddy.ai/docs/zh/cli/quickstart) covers sign-in and first launch.
 
 ## Distinguish Two Types of Input
 
 The course uses these two labels:
 
-**Enter in Claude Code:**
+**Enter in CodeBuddy Code:**
 
 ```text
 Please read the inputs directory first...
@@ -81,7 +81,7 @@ Please read the inputs directory first...
 python3 checks/check-project.py setup
 ```
 
-If you are already in the Claude Code interactive interface and need to run a terminal command yourself, enter:
+If you are already in the CodeBuddy Code interactive interface and need to run a terminal command yourself, enter:
 
 ```text
 ! python3 checks/check-project.py setup

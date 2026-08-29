@@ -10,10 +10,12 @@
 
 ## Step 1: Begin Implementation
 
-Enter in Claude Code:
+Exit Plan Mode before building: press `Shift+Tab` until the status bar shows **Accept Edits**. This mode allows file edits while still asking before other tool actions such as terminal commands.
+
+Enter in CodeBuddy Code:
 
 ```text
-Using the approved plan, project Memory, executive-dashboard Skill, and synthesized findings from the three Subagents, execute @prompts/build-dashboard.txt
+/executive-dashboard Using the approved plan, project Memory, and synthesized findings from the three Subagents, execute @prompts/build-dashboard.txt
 ```
 
 The Agent should create `site/` in the project root rather than modify `reference/site/`.
@@ -42,10 +44,10 @@ Open:
 http://localhost:8000/site/
 ```
 
-You can also ask Claude Code to use `/run` directly:
+You can also ask CodeBuddy Code to run the server for you:
 
 ```text
-/run
+Run python3 -m http.server 8000 in the background and tell me when the site is ready.
 ```
 
 ## Step 4: Perform Manual Acceptance Testing

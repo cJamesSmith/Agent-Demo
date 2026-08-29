@@ -23,7 +23,7 @@ venv/
 # Editors and local tooling
 .vscode/
 .idea/
-/.claude/worktrees/
+/.codebuddy/worktrees/
 *.swp
 *.swo
 

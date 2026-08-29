@@ -12,12 +12,12 @@ This is not an HTML course. Students learn how to govern and use a Coding Agent 
 |---:|---|---|
 | 0–3 | Show `inputs/` | The Agent works with a project and its materials, not just a chat |
 | 3–6 | `/memory` | Organizational rules that remain in effect |
-| 6–10 | `/plan`; show and revise the plan | People approve scope and risk before execution |
+| 6–10 | Enter Plan Mode; show and revise the plan | People approve scope and risk before execution |
 | 10–14 | `/executive-dashboard` | Methodology loads on demand and can be reused across a team |
 | 14–18 | Run three Subagents in parallel | A virtual cross-functional team with least privilege |
 | 18–25 | Use the reference implementation or build live | Turn source material into a working decision tool |
 | 25–29 | Switch scenarios and introduce an executive change | Software can evolve through natural-language instructions |
-| 29–33 | `/code-review`, `/rewind` | Review and recover instead of only generating |
+| 29–33 | `git diff`, `/code-review`, `/rewind` | Inspect, review, and recover instead of only generating |
 | 33–35 | Summarize the six elements | Prompt / Memory / Skill / Subagent / Planning / Command |
 
 For the accelerated version, generate `site/` in advance and make only one small change live. A complete live build depends on network and model latency.
@@ -46,8 +46,8 @@ Have students complete `lessons/00` through `07` independently. Pairs work well:
 
 ### The Skill Does Not Appear
 
-1. Confirm the path is `.claude/skills/executive-dashboard/SKILL.md`.
-2. Run `/reload-skills`.
+1. Confirm the path is `.codebuddy/skills/executive-dashboard/SKILL.md`.
+2. Restart the CodeBuddy Code session so it reloads project Skills.
 3. If it still fails, ask the Agent to read the file directly, continue the course, and investigate the version afterward.
 
 ### A Subagent Does Not Start Automatically
@@ -70,9 +70,9 @@ Open `http://localhost:8000/reference/site/` and explain that this is a pre-gene
 - Check whether the port is occupied; if so, use `python3 -m http.server 8765`.
 - Do not open the site through `file://`; some browser behavior differs from a local server.
 
-### `/diff` Is Unavailable
+### Git Diff Is Unavailable
 
-The distributed course directory might not be initialized as a Git repository. Ask the Agent to list the new files in `site/`, then run `python3 checks/check-project.py student`. Use `/diff` with Git in real team projects.
+The distributed course directory might not be initialized as a Git repository. Compare the deliverable with the scaffold using `git diff --no-index -- starter/site/ site/`, then run `python3 checks/check-project.py student`. Exit code `1` from this comparison only means differences were found.
 
 ## Safety and Authenticity
 

@@ -5,7 +5,7 @@ Outcome:
 - The dashboard should answer which market to enter first, why, and whether the conclusion changes when strategic priorities change.
 
 Constraints:
-- Read the project CLAUDE.md and every file under inputs/.
+- Read the project CODEBUDDY.md and every file under inputs/.
 - Use plain HTML, CSS, and JavaScript without external CDNs, frameworks, backends, or build tools.
 - Create or modify files only under the root-level site/ directory. Do not modify inputs/ or reference/.
 - Support desktop and mobile layouts.

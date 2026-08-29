@@ -2,7 +2,7 @@
 name: executive-dashboard
 description: Turn market, operating, or investment materials into an interactive executive decision dashboard. Use for executive dashboards, market entry, business reviews, investment reviews, option comparisons, and scenario simulations.
 argument-hint: "[decision topic]"
-allowed-tools: Read, Grep, Glob
+allowed-tools: Read, Grep, Glob, Edit, Write, Bash
 ---
 
 # Executive Decision Dashboard Method

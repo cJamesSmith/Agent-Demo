@@ -10,19 +10,13 @@
 
 ## Step 1: Enter Plan Mode
 
-Enter in Claude Code:
-
-```text
-/plan
-```
-
-You can also press `Shift+Tab` until the status bar shows Plan Mode.
+Press `Shift+Tab` until the CodeBuddy Code status bar shows Plan Mode. On Windows, `Alt+M` is also supported. Use `/plan` later if you need to preview the current plan file.
 
 > Plan Mode is a permission mode, not merely a prompt. File changes are blocked until the plan is approved.
 
 ## Step 2: Submit the Business Objective
 
-Copy the contents of `prompts/plan.txt` into Claude Code, or reference it with `@prompts/plan.txt`.
+Copy the contents of `prompts/plan.txt` into CodeBuddy Code, or reference it with `@prompts/plan.txt`.
 
 ```text
 Please read @prompts/plan.txt and create the requested plan.
@@ -47,13 +41,13 @@ Revise the plan to add a sensitivity indicator showing whether the recommendatio
 
 ## Step 4: Approve the Plan
 
-Once no major questions remain, enter:
+Once no major questions remain, tell CodeBuddy the plan is approved but keep this lesson read-only:
 
 ```text
 The plan is approved. Do not implement it yet; I still need to complete the Memory, Skill, and Subagents lessons.
 ```
 
-You deliberately delay implementation because the following lessons will load more organizational capabilities for the Agent.
+You deliberately delay implementation because the following lessons will load more organizational capabilities for the Agent. Stay in Plan Mode until Lesson 5.
 
 ## Checkpoint
 
