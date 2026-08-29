@@ -1,66 +1,66 @@
-# 第 2 课：Memory——让 Agent 遵循项目规则
+# Lesson 2: Memory—Make the Agent Follow Project Rules
 
-**用时：8–10 分钟**
+**Time: 8–10 minutes**
 
-## 学习目标
+## Learning Objectives
 
-- 理解 `CLAUDE.md` 是跨会话加载的项目说明。
-- 区分长期规则与一次性任务。
-- 验证 Agent 已经读到 Memory。
+- Understand that `CLAUDE.md` contains project instructions loaded across sessions.
+- Distinguish persistent rules from one-time tasks.
+- Verify that the Agent has read the Memory.
 
-## 步骤 1：查看 Memory
+## Step 1: Inspect Memory
 
-在 Claude Code 中输入：
+Enter in Claude Code:
 
 ```text
 /memory
 ```
 
-选择项目 Memory，查看根目录的 `CLAUDE.md`。
+Select the project Memory and inspect the root-level `CLAUDE.md`.
 
-如果课堂环境不方便打开编辑器，直接输入：
+If opening an editor is inconvenient in the classroom environment, enter:
 
 ```text
-请读取项目 Memory，并用“规则 → 对网页的影响”列出最重要的 5 条。
+Read the project Memory and list the five most important items as “Rule → Effect on the website.”
 ```
 
-也可以引用现成提示：
+You can also reference the prepared prompt:
 
 ```text
 @prompts/inspect-memory.txt
 ```
 
-## 步骤 2：做一次反事实测试
+## Step 2: Run a Counterfactual Test
 
-输入：
+Enter:
 
 ```text
-为了让页面显得更有说服力，能否隐藏数据缺口，只展示推荐结论？请依据项目规则回答。
+To make the page seem more persuasive, can we hide the data gaps and show only the recommendation? Answer according to the project rules.
 ```
 
-预期：Agent 应拒绝隐藏关键不确定性，并指出项目要求区分事实、推断、假设及展示反对理由。
+Expected result: the Agent should refuse to hide material uncertainty and point out the requirements to separate facts, inferences, and assumptions and to show counterarguments.
 
-## 步骤 3：判断什么应该记住
+## Step 3: Decide What Should Be Remembered
 
-| 内容 | 放在哪里 |
+| Content | Where It Belongs |
 |---|---|
-| 所有高管页面必须结论优先 | `CLAUDE.md` |
-| 今天把标题改成“东南亚决策室” | 当前对话 |
-| 一套完整的决策网页制作流程 | Skill |
-| 真实客户密码或 API Key | 哪里都不要放 |
+| Every executive page must lead with the conclusion | `CLAUDE.md` |
+| Rename the title to “Southeast Asia Decision Room” today | Current conversation |
+| A complete decision-dashboard production workflow | Skill |
+| A real customer password or API key | Nowhere |
 
-## 关键提醒
+## Key Reminder
 
-`CLAUDE.md` 不是资料仓库。它会进入每次会话，应该短、明确、普遍适用。长流程应放入 Skills；路径特定规则可以放入 `.claude/rules/`。
+`CLAUDE.md` is not a document repository. It enters every session, so it should be short, explicit, and broadly applicable. Put long workflows in Skills; path-specific rules can go in `.claude/rules/`.
 
-## 检查点
+## Checkpoint
 
-输入：
+Enter:
 
 ```text
-如果我明天重新启动 Claude Code，哪些项目约束仍会生效？为什么？
+If I restart Claude Code tomorrow, which project constraints will still apply, and why?
 ```
 
-Agent 应提到项目级 `CLAUDE.md` 会自动加载。
+The Agent should mention that the project-level `CLAUDE.md` loads automatically.
 
-下一步：[`03-skills.md`](03-skills.md)
+Next: [`03-skills.md`](03-skills.md)

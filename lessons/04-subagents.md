@@ -1,60 +1,60 @@
-# 第 4 课：Subagents——组建虚拟专家团队
+# Lesson 4: Subagents—Assemble a Virtual Expert Team
 
-**用时：10–15 分钟**
+**Time: 10–15 minutes**
 
-## 学习目标
+## Learning Objectives
 
-- 并行委派三个职责明确的分析任务。
-- 理解隔离上下文和最小权限。
-- 让主 Agent 综合，而不是简单拼接答案。
+- Delegate three well-defined analysis tasks in parallel.
+- Understand isolated context and least privilege.
+- Have the main Agent synthesize findings rather than concatenate answers.
 
-## 步骤 1：查看项目角色
+## Step 1: Review the Project Roles
 
-项目配置了：
+The project configures:
 
-- `market-analyst`：检查数据、计算和证据缺口；
-- `cfo-challenger`：从现金流与下行情景挑战建议；
-- `executive-designer`：设计高管在 5 分钟内能读懂的信息结构。
+- `market-analyst`: checks data, calculations, and evidence gaps.
+- `cfo-challenger`: challenges the recommendation through cash flow and downside scenarios.
+- `executive-designer`: designs an information structure an executive can understand in five minutes.
 
-三个角色都只允许读取，不直接修改网页。
+All three roles are read-only and do not modify the website directly.
 
-## 步骤 2：并行委派
+## Step 2: Delegate in Parallel
 
-输入 Claude Code：
-
-```text
-请执行 @prompts/delegate-analysis.txt
-```
-
-观察任务视图中是否出现三个后台 Agent。不要让三个 Agent 同时修改同一组文件；它们只产出分析，主 Agent负责综合和实现。
-
-## 步骤 3：要求综合
-
-如果主 Agent 只罗列三份报告，追加：
+Enter in Claude Code:
 
 ```text
-不要简单拼接报告。请指出三方一致意见、冲突意见、最终采纳的决定，以及你没有采纳的建议和理由。
+Please execute @prompts/delegate-analysis.txt
 ```
 
-## 为什么使用 Subagents
+Check whether three background Agents appear in the task view. Do not let three Agents edit the same files simultaneously. They produce analysis; the main Agent synthesizes and implements it.
 
-- 独立上下文避免主会话被大量搜索细节淹没。
-- 专门角色可以有不同的系统提示和工具权限。
-- 可并行处理相互独立的任务。
-- 反方角色能主动寻找主结论的弱点。
+## Step 3: Request Synthesis
 
-## 什么时候不用
+If the main Agent only lists the three reports, add:
 
-改一个标题、解释一个函数或做一个简单查询时，启动多个 Subagents 只会增加延迟和成本。
+```text
+Do not simply concatenate the reports. Identify shared conclusions, conflicting views, the final decisions you adopted, and the recommendations you rejected with reasons.
+```
 
-## 检查点
+## Why Use Subagents?
 
-确认综合报告至少包含：
+- Isolated contexts keep large amounts of search detail out of the main conversation.
+- Specialist roles can have different system prompts and tool permissions.
+- Independent tasks can run in parallel.
+- A dissenting role can actively find weaknesses in the leading conclusion.
 
-- 一项三方共识；
-- 一项冲突；
-- 一个数据缺口；
-- 一个反对推荐市场的理由；
-- 一个 30 天内可验证的动作。
+## When Not to Use Them
 
-下一步：[`05-build.md`](05-build.md)
+Starting multiple Subagents only adds latency and cost when changing one title, explaining one function, or running a simple query.
+
+## Checkpoint
+
+Confirm that the synthesized report contains at least:
+
+- One point of consensus across all three roles.
+- One conflict.
+- One data gap.
+- One reason to oppose the recommended market.
+- One action that can be validated within 30 days.
+
+Next: [`05-build.md`](05-build.md)

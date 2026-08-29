@@ -1,17 +1,17 @@
-# 单页信息架构模板
+# One-Page Information Architecture Template
 
-## 首屏：30 秒决策
+## Above the Fold: 30-Second Decision
 
-教学数据声明、当前情景、推荐市场与分差、三条依据、最强反对理由、敏感性提示。
+Fictional-data notice, current scenario, recommended market and score gap, three supporting reasons, strongest counterargument, and sensitivity indicator.
 
-## 比较与模拟
+## Comparison and Simulation
 
-三国排名卡片、原始指标表、情景按钮、五个权重滑块、评分方法。
+Three-market ranking cards, raw-metrics table, scenario buttons, five weight sliders, and scoring method.
 
-## 风险与行动
+## Risks and Actions
 
-风险热力图、关键假设、数据缺口、30/60/90 天行动、来源清单。
+Risk heatmap, key assumptions, Data Gaps, 30/60/90-day actions, and source list.
 
-## 交互原则
+## Interaction Principles
 
-按钮使用 aria-pressed；滑块有标签和数值；动态区使用 aria-live；展开区优先使用 details；表格在自身容器滚动；颜色之外提供文字；尊重 prefers-reduced-motion。
+Use `aria-pressed` for buttons; give sliders labels and values; use `aria-live` for dynamic regions; prefer `details` for expandable sections; keep tables scrollable within their own containers; provide text in addition to color; and respect `prefers-reduced-motion`.

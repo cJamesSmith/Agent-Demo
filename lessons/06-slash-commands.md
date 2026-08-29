@@ -1,80 +1,80 @@
-# 第 6 课：Slash Commands——控制、审查与恢复
+# Lesson 6: Slash Commands—Control, Review, and Recover
 
-**用时：10–15 分钟**
+**Time: 10–15 minutes**
 
-## 学习目标
+## Learning Objectives
 
-- 不依赖 Agent 的自我报告，检查实际修改。
-- 用不同类型的审查发现问题。
-- 知道如何回到安全状态。
+- Inspect actual changes instead of relying on the Agent's self-report.
+- Use different review methods to find problems.
+- Know how to return to a safe state.
 
-## 1. `/diff`：看实际修改
+## 1. `/diff`: Inspect Actual Changes
 
-输入：
+Enter:
 
 ```text
 /diff
 ```
 
-关注：Agent 修改了哪些文件？是否碰了 `inputs/`？是否加入了外部 CDN？
+Look for which files the Agent changed, whether it touched `inputs/`, and whether it added an external CDN.
 
-> 如果课程目录没有初始化 Git，`/diff` 的体验可能受限。此时让 Agent 列出 `site/` 新文件，并使用检查器；真实项目建议使用 Git。
+> If the course directory has not been initialized as a Git repository, the `/diff` experience may be limited. Ask the Agent to list the new files in `site/` and use the checker instead. Git is recommended for real projects.
 
-## 2. `/code-review`：独立找正确性问题
+## 2. `/code-review`: Independently Find Correctness Problems
 
-输入：
+Enter:
 
 ```text
 /code-review high site/
 ```
 
-或者使用课程提示：
+Or use the course prompt:
 
 ```text
-请执行 @prompts/review.txt
+Please execute @prompts/review.txt
 ```
 
-审查重点：
+Review priorities:
 
-- 评分方向是否写反；
-- 权重归一化是否稳定；
-- 数据来源是否与显示值一致；
-- 键盘操作和窄屏布局是否可用。
+- Whether any scoring direction is reversed.
+- Whether weight normalization is stable.
+- Whether data sources match the displayed values.
+- Whether keyboard controls and narrow-screen layouts work.
 
-## 3. `/simplify`：清理实现
+## 3. `/simplify`: Clean Up the Implementation
 
-`/code-review` 主要寻找正确性缺陷，`/simplify` 关注复用、简化和可维护性。二者不是同一个任务。
+`/code-review` primarily finds correctness defects; `/simplify` focuses on reuse, simplicity, and maintainability. They are not the same task.
 
 ```text
 /simplify site/
 ```
 
-## 4. `/rewind`：恢复检查点
+## 4. `/rewind`: Restore a Checkpoint
 
-在做一个明显的视觉实验前输入：
+Before making an obvious visual experiment, enter:
 
 ```text
-把整个网页改成荧光绿色，并隐藏来源区。
+Make the entire website fluorescent green and hide the sources section.
 ```
 
-不要真的保留它。使用：
+Do not keep the result. Use:
 
 ```text
 /rewind
 ```
 
-选择恢复代码和/或对话。讲师演示时也可以只说明选项，不执行破坏性修改。
+Choose whether to restore code, conversation, or both. Instructors can describe the options without performing the destructive change.
 
-## 5. `/memory` 与 `/skills`
+## 5. `/memory` and `/skills`
 
-它们不是生产网页的“魔法命令”，而是查看 Agent 长期背景和可复用能力的控制入口。
+These are not “magic commands” that produce a website. They are control entry points for inspecting the Agent's persistent context and reusable capabilities.
 
-## 检查点
+## Checkpoint
 
-用一句话说明下面三者差异：
+Explain the difference among these in one sentence:
 
 - `/code-review`
 - `/simplify`
 - `/rewind`
 
-下一步：[`07-reflect.md`](07-reflect.md)
+Next: [`07-reflect.md`](07-reflect.md)

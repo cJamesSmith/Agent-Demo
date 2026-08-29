@@ -1,22 +1,22 @@
-# 评分与敏感性参考
+# Scoring and Sensitivity Reference
 
-同一指标在三个市场内做 0–100 min-max 归一化：正向指标 `(value-min)/(max-min)*100`，反向指标 `(max-value)/(max-min)*100`。若最大值等于最小值，统一记为 50。
+Normalize each metric across the three markets to a 0–100 range using min-max normalization: for positive metrics, `(value-min)/(max-min)*100`; for reverse metrics, `(max-value)/(max-min)*100`. If the maximum equals the minimum, assign 50 to all markets for that metric.
 
-| 维度 | 原始指标 | 组合方式 |
+| Dimension | Source metrics | Combination |
 |---|---|---|
-| 增长潜力 | 市场规模、三年 CAGR | 各 50% |
-| 盈利能力 | 毛利率（正向）、获客成本（反向） | 各 50% |
-| 竞争环境 | 竞争分数 | 反向 100% |
-| 监管风险 | 监管复杂度 | 反向 100% |
-| 执行可行性 | 执行难度 | 反向 100% |
+| Growth Potential | Market size, three-year CAGR | 50% each |
+| Profitability | Gross margin (positive), customer acquisition cost (reverse) | 50% each |
+| Competitive Environment | Competition score | 100% reverse |
+| Regulatory Risk | Regulatory complexity | 100% reverse |
+| Execution Feasibility | Execution difficulty | 100% reverse |
 
-总分为维度分与维度权重乘积之和，保留一位小数。
+The total score is the sum of each dimension score multiplied by its dimension weight, rounded to one decimal place.
 
-| 情景 | 增长 | 盈利 | 竞争 | 监管 | 执行 |
+| Scenario | Growth | Profitability | Competition | Regulation | Execution |
 |---|---:|---:|---:|---:|---:|
-| 增长优先 | 40 | 20 | 15 | 10 | 15 |
-| 利润优先 | 15 | 40 | 10 | 15 | 20 |
-| 风险优先 | 10 | 20 | 10 | 35 | 25 |
-| 现金流优先（扩展） | 10 | 35 | 10 | 20 | 25 |
+| Growth-first | 40 | 20 | 15 | 10 | 15 |
+| Profit-first | 15 | 40 | 10 | 15 | 20 |
+| Risk-first | 10 | 20 | 10 | 35 | 25 |
+| Cash-flow-first (extension) | 10 | 35 | 10 | 20 | 25 |
 
-滑块变化时按比例调整其他维度并保持总和 100。差距小于 5 分时标记结论敏感。数据置信度只展示，不直接混入吸引力评分。
+When one slider changes, adjust the other dimensions proportionally so the total remains 100. Mark the conclusion as sensitive when the score gap is less than 5 points. Display data confidence, but do not include it directly in the attractiveness score.

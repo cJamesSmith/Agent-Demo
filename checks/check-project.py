@@ -83,7 +83,7 @@ def check_files(relative_paths: list[str]) -> list[str]:
         if path.is_file() and path.stat().st_size > 0:
             pass_line(relative_path)
         else:
-            fail_line(f"缺少或为空：{relative_path}")
+            fail_line(f"Missing or empty: {relative_path}")
             failures.append(relative_path)
     return failures
 
@@ -93,17 +93,17 @@ def check_markers(site_directory: Path, markers: dict[str, list[str]]) -> list[s
     for filename, expected_markers in markers.items():
         path = site_directory / filename
         if not path.is_file():
-            fail_line(f"缺少：{path.relative_to(ROOT)}")
+            fail_line(f"Missing: {path.relative_to(ROOT)}")
             failures.append(str(path))
             continue
 
         content = path.read_text(encoding="utf-8")
         missing = [marker for marker in expected_markers if marker not in content]
         if missing:
-            fail_line(f"{path.relative_to(ROOT)} 缺少标识：{', '.join(missing)}")
+            fail_line(f"{path.relative_to(ROOT)} missing markers: {', '.join(missing)}")
             failures.extend(f"{path}:{marker}" for marker in missing)
         else:
-            pass_line(f"{path.relative_to(ROOT)} 关键结构")
+            pass_line(f"{path.relative_to(ROOT)} required structure")
     return failures
 
 
@@ -118,45 +118,45 @@ def check_no_external_reference_assets() -> list[str]:
             if token in content
         ]
         if forbidden:
-            fail_line(f"{path.relative_to(ROOT)} 含外部依赖：{', '.join(forbidden)}")
+            fail_line(f"{path.relative_to(ROOT)} contains external dependencies: {', '.join(forbidden)}")
             failures.extend(f"{path}:{token}" for token in forbidden)
         else:
-            pass_line(f"{path.relative_to(ROOT)} 无外部网络依赖")
+            pass_line(f"{path.relative_to(ROOT)} has no external network dependencies")
     return failures
 
 
 def run_setup() -> list[str]:
-    print("\n[课程与 Claude Code 配置]")
+    print("\n[Course and Claude Code Configuration]")
     failures = check_files(SETUP_FILES + LESSON_FILES)
 
     claude_md = (ROOT / "CLAUDE.md").read_text(encoding="utf-8")
-    if "虚构" in claude_md and "事实" in claude_md and "假设" in claude_md:
-        pass_line("CLAUDE.md 包含真实性与证据规则")
+    if "fictional" in claude_md.lower() and "fact" in claude_md.lower() and "assumption" in claude_md.lower():
+        pass_line("CLAUDE.md includes truthfulness and evidence rules")
     else:
-        fail_line("CLAUDE.md 缺少真实性或证据规则")
+        fail_line("CLAUDE.md is missing truthfulness or evidence rules")
         failures.append("CLAUDE.md:rules")
 
     for agent_name in ("market-analyst", "cfo-challenger", "executive-designer"):
         content = (ROOT / f".claude/agents/{agent_name}.md").read_text(encoding="utf-8")
         if "tools: Read, Grep, Glob" in content:
-            pass_line(f"{agent_name} 使用只读工具")
+            pass_line(f"{agent_name} uses read-only tools")
         else:
-            fail_line(f"{agent_name} 未保持只读工具范围")
+            fail_line(f"{agent_name} does not retain a read-only tool scope")
             failures.append(f"agent:{agent_name}:tools")
     return failures
 
 
 def run_student() -> list[str]:
-    print("\n[学生网页]")
+    print("\n[Student Site]")
     site = ROOT / "site"
     if not site.exists():
-        fail_line("尚未创建 site/。请完成第 5 课后再运行 student 检查。")
+        fail_line("site/ has not been created. Complete Lesson 5 before running the student check.")
         return ["site"]
     return check_markers(site, SITE_MARKERS)
 
 
 def run_reference() -> list[str]:
-    print("\n[参考网页]")
+    print("\n[Reference Site]")
     failures = check_markers(ROOT / "reference/site", REFERENCE_MARKERS)
     failures.extend(check_no_external_reference_assets())
     return failures
@@ -166,7 +166,7 @@ def main() -> int:
     mode = sys.argv[1] if len(sys.argv) > 1 else "all"
     valid_modes = {"setup", "student", "reference", "all"}
     if mode not in valid_modes:
-        print("用法：python3 checks/check-project.py [setup|student|reference|all]")
+        print("Usage: python3 checks/check-project.py [setup|student|reference|all]")
         return 2
 
     failures: list[str] = []
@@ -179,9 +179,9 @@ def main() -> int:
 
     print()
     if failures:
-        print(f"RESULT  {len(failures)} 项未通过")
+        print(f"RESULT  {len(failures)} check(s) failed")
         return 1
-    print("RESULT  全部检查通过")
+    print("RESULT  All checks passed")
     return 0
 
 

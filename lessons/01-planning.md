@@ -1,70 +1,70 @@
-# 第 1 课：Planning——先审批方案，再开始建设
+# Lesson 1: Planning—Approve the Approach Before Building
 
-**用时：10–15 分钟**
+**Time: 10–15 minutes**
 
-## 学习目标
+## Learning Objectives
 
-- 让 Agent 在只读状态下理解资料和任务。
-- 审查范围、评分方法、风险与验证方式。
-- 体验人在关键决策点保留控制权。
+- Let the Agent understand the materials and task in read-only mode.
+- Review scope, scoring, risks, and validation.
+- Experience how people retain control at key decision points.
 
-## 步骤 1：进入 Plan Mode
+## Step 1: Enter Plan Mode
 
-在 Claude Code 中输入：
+Enter in Claude Code:
 
 ```text
 /plan
 ```
 
-也可以按 `Shift+Tab` 切换，直到状态栏显示 Plan Mode。
+You can also press `Shift+Tab` until the status bar shows Plan Mode.
 
-> Plan Mode 是权限模式，不只是一段提示词。在计划获批前，文件修改被阻止。
+> Plan Mode is a permission mode, not merely a prompt. File changes are blocked until the plan is approved.
 
-## 步骤 2：提交业务目标
+## Step 2: Submit the Business Objective
 
-复制 `prompts/plan.txt` 的内容到 Claude Code。你也可以用 `@prompts/plan.txt` 引用它。
-
-```text
-请读取 @prompts/plan.txt 并按其中要求规划。
-```
-
-## 步骤 3：像管理者一样评审计划
-
-不要立即批准。检查计划是否回答：
-
-- 是否覆盖七个网页区域？
-- 是否说明评分如何从原始数据计算？
-- 是否把事实、推断和假设分开？
-- 是否保留最强反对理由？
-- 是否说明如何在浏览器和代码层验证？
-- 是否只修改 `site/`，没有改动原始输入？
-
-至少提出一次修订。例如：
+Copy the contents of `prompts/plan.txt` into Claude Code, or reference it with `@prompts/plan.txt`.
 
 ```text
-请修订计划：增加“数据置信度下降时推荐是否变化”的敏感性提示；同时明确不修改 inputs 下的原始材料。
+Please read @prompts/plan.txt and create the requested plan.
 ```
 
-## 步骤 4：批准计划
+## Step 3: Review the Plan Like a Manager
 
-确认没有重大未决问题后输入：
+Do not approve it immediately. Check whether the plan answers:
+
+- Does it cover all seven website sections?
+- Does it explain how scores are calculated from raw data?
+- Does it separate facts, inferences, and assumptions?
+- Does it preserve the strongest counterargument?
+- Does it explain browser-level and code-level validation?
+- Does it modify only `site/`, leaving the original inputs untouched?
+
+Request at least one revision. For example:
 
 ```text
-计划已通过。先不要实现，我还要完成 Memory、Skill 和 Subagents 课程。
+Revise the plan to add a sensitivity indicator showing whether the recommendation changes when data confidence falls. Also state explicitly that the source materials under inputs/ will not be modified.
 ```
 
-这一次故意不马上实施，因为后续课程会为 Agent 装载更多组织能力。
+## Step 4: Approve the Plan
 
-## 检查点
+Once no major questions remain, enter:
 
-完成下面这句话：
+```text
+The plan is approved. Do not implement it yet; I still need to complete the Memory, Skill, and Subagents lessons.
+```
 
-> Planning 的价值不是让 Agent 写更长的清单，而是在 ________ 和 ________ 之间建立评审边界。
+You deliberately delay implementation because the following lessons will load more organizational capabilities for the Agent.
 
-参考答案：理解/决策，文件修改/执行。
+## Checkpoint
 
-## 为什么不能每次都规划
+Complete this sentence:
 
-改错字或调整一个颜色时，长计划会增加成本而不降低风险。Planning 适合多文件、存在多种方案、涉及业务规则或需要明确验证方式的任务。
+> The value of Planning is not making the Agent write a longer list; it is establishing a review boundary between ________ and ________.
 
-下一步：[`02-memory.md`](02-memory.md)
+Suggested answer: understanding/decision-making and file modification/execution.
+
+## Why Not Plan Every Time?
+
+A long plan adds cost without reducing risk when correcting a typo or changing one color. Planning is appropriate for multi-file tasks, multiple viable approaches, business rules, or work requiring explicit validation.
+
+Next: [`02-memory.md`](02-memory.md)

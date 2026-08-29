@@ -1,7 +1,7 @@
-请读取当前项目已加载的 Memory，但不要修改它。
+Read the Memory currently loaded for this project, but do not modify it.
 
-请输出一个两列表格：
-- Memory 规则
-- 这条规则会如何影响最终网页
+Output a two-column table:
+- Memory rule
+- How this rule will affect the final website
 
-只选最重要的 5 条。最后指出一条不应该放进 Memory、而应该放进 Skill 的内容。
+Select only the five most important rules. Finally, identify one item that should not be in Memory and belongs in a Skill instead.

@@ -1,80 +1,80 @@
-# 第 5 课：让 Agent 构建网页
+# Lesson 5: Let the Agent Build the Website
 
-**用时：15–25 分钟**
+**Time: 15–25 minutes**
 
-## 学习目标
+## Learning Objectives
 
-- 从已经评审的计划开始执行，而不是重新随意生成。
-- 让 Agent创建、运行并验证一个完整网页。
-- 用自然语言进行一次战略方向变更。
+- Execute from the reviewed plan instead of generating a new approach arbitrarily.
+- Have the Agent create, run, and validate a complete website.
+- Make one strategic-direction change through natural language.
 
-## 步骤 1：开始实施
+## Step 1: Begin Implementation
 
-输入 Claude Code：
+Enter in Claude Code:
 
 ```text
-请基于已经批准的计划、项目 Memory、executive-dashboard Skill，以及三个 Subagents 的综合结论，执行 @prompts/build-dashboard.txt
+Using the approved plan, project Memory, executive-dashboard Skill, and synthesized findings from the three Subagents, execute @prompts/build-dashboard.txt
 ```
 
-Agent 应创建根目录下的 `site/`，而不是修改 `reference/site/`。
+The Agent should create `site/` in the project root rather than modify `reference/site/`.
 
-## 步骤 2：结构检查
+## Step 2: Run the Structural Check
 
-在终端运行：
+Run in the terminal:
 
 ```bash
 python3 checks/check-project.py student
 ```
 
-结构检查只能证明关键元素存在，不能证明网页好用。
+A structural check proves only that key elements exist, not that the website is usable.
 
-## 步骤 3：运行网页
+## Step 3: Run the Website
 
-在终端运行：
+Run in the terminal:
 
 ```bash
 python3 -m http.server 8000
 ```
 
-打开：
+Open:
 
 ```text
 http://localhost:8000/site/
 ```
 
-也可以直接让 Claude Code 使用 `/run`：
+You can also ask Claude Code to use `/run` directly:
 
 ```text
 /run
 ```
 
-## 步骤 4：人工验收
+## Step 4: Perform Manual Acceptance Testing
 
-逐项操作：
+Test each item:
 
-- 切换增长、利润、风险三种情景；
-- 调整一个权重，排名应立即更新；
-- 权重总和应始终为 100%；
-- 展开来源和假设；
-- 缩窄浏览器窗口，页面不应横向溢出；
-- 推荐区应同时出现反对理由。
+- Switch among the growth-first, profit-first, and risk-first scenarios.
+- Adjust a weight and confirm that the ranking updates immediately.
+- Confirm that the weights always total 100%.
+- Expand sources and assumptions.
+- Narrow the browser window and confirm that the page does not overflow horizontally.
+- Confirm that the recommendation section also presents a counterargument.
 
-## 步骤 5：模拟高管临时改变偏好
+## Step 5: Simulate a Last-Minute Executive Priority Change
 
-输入：
+Enter:
 
 ```text
-请执行 @prompts/executive-change.txt
+Please execute @prompts/executive-change.txt
 ```
 
-观察 Agent 是否保留原有情景，并解释推荐变化，而不是只修改一个标题。
+Observe whether the Agent preserves the existing scenarios and explains the recommendation change instead of only editing a heading.
 
-## 检查点
+## Checkpoint
 
-网页必须让观看者分辨：
+The website must let viewers distinguish among:
 
-- 数据表中的事实；
-- 研究员或 Agent 的推断；
-- 需要验证的假设。
+- Facts in the data table.
+- Inferences made by researchers or the Agent.
+- Assumptions that still need validation.
 
-下一步：[`06-slash-commands.md`](06-slash-commands.md)
+Next: [`06-slash-commands.md`](06-slash-commands.md)

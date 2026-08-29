@@ -1,21 +1,21 @@
-请显式调用以下三个项目 Subagents，并行分析 inputs 下的全部资料：
+Explicitly invoke the following three project Subagents to analyze every file under inputs/ in parallel:
 
 1. market-analyst
-   验证数据方向和评分逻辑，找出证据冲突、数据缺口，并给出按三个默认情景的初步排名。
+   Validate data direction and scoring logic, identify evidence conflicts and data gaps, and provide preliminary rankings for the three default scenarios.
 
 2. cfo-challenger
-   从现金流、回本周期、下行情景和机会成本出发，挑战任何“规模最大或增长最快就应该优先”的结论。
+   Challenge any conclusion that “the largest or fastest-growing market should come first” from the perspectives of cash flow, payback period, downside scenarios, and opportunity cost.
 
 3. executive-designer
-   为 5 分钟高管阅读设计单页信息架构，说明哪些信息首屏展示，哪些渐进展开。
+   Design a single-page information architecture an executive can understand in five minutes. Explain what appears above the fold and what is progressively disclosed.
 
-三个 Agent 只读，不修改任何文件。
+All three Agents are read-only and must not modify any files.
 
-完成后由主 Agent 综合，输出：
-- 三方共识
-- 关键冲突
-- 最终采纳的产品和评分决定
-- 未采纳的建议及原因
-- 必须在页面显式展示的假设与反对理由
+After they finish, have the main Agent synthesize:
+- Shared conclusions across all three roles
+- Key conflicts
+- Final product and scoring decisions adopted
+- Recommendations not adopted and the reasons
+- Assumptions and counterarguments that must appear explicitly on the page
 
-不要简单拼接三份报告。
+Do not simply concatenate the three reports.

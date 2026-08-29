@@ -1,13 +1,13 @@
-现在开始实施。
+Begin implementation now.
 
-要求：
-1. 在项目根目录创建 site/index.html、site/styles.css、site/app.js。
-2. 使用 inputs 中的虚构数据，不修改原始输入。
-3. 实现 CEO 摘要、市场比较、情景切换、权重模拟器、风险热力图、90 天计划、来源与假设七个区域。
-4. 提供增长优先、利润优先、风险优先三个预设。
-5. 权重滑块改变后，将其他维度按比例调整，始终保持总和为 100%，并实时更新评分、排名和推荐解释。
-6. 事实、推断、假设使用清晰的视觉标签。
-7. 所有交互支持键盘；尊重 prefers-reduced-motion；窄屏不能产生页面级横向滚动。
-8. 不加载任何外部资源，不做网络请求。
-9. 页面显著声明数据完全虚构，不能用于真实经营决策。
-10. 完成后运行可用的语法和项目检查，报告实际结果；不要声称未运行的检查通过。
+Requirements:
+1. Create site/index.html, site/styles.css, and site/app.js in the project root.
+2. Use the fictional data in inputs/ without modifying the source materials.
+3. Implement seven sections: CEO summary, market comparison, scenario selector, weight simulator, risk heatmap, 90-day plan, and sources and assumptions.
+4. Provide growth-first, profit-first, and risk-first presets.
+5. When a weight slider changes, proportionally adjust the other dimensions so the total always remains 100%, and update scores, rankings, and recommendation explanations in real time.
+6. Use clear visual labels for facts, inferences, and assumptions.
+7. Make every interaction keyboard accessible, respect prefers-reduced-motion, and prevent page-level horizontal scrolling on narrow screens.
+8. Load no external resources and make no network requests.
+9. Prominently state that all data is fictional and cannot be used for real business decisions.
+10. After implementation, run the available syntax and project checks and report the actual results. Do not claim that unrun checks passed.

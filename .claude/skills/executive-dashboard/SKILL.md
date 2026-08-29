@@ -1,26 +1,26 @@
 ---
 name: executive-dashboard
-description: 将市场、经营或投资资料制作成面向高管的交互式决策网页。适用于高管驾驶舱、市场进入、经营复盘、投资评审、方案比较和情景模拟。
-argument-hint: "[决策主题]"
+description: Turn market, operating, or investment materials into an interactive executive decision dashboard. Use for executive dashboards, market entry, business reviews, investment reviews, option comparisons, and scenario simulations.
+argument-hint: "[decision topic]"
 allowed-tools: Read, Grep, Glob
 ---
 
-# 高管决策网页工作法
+# Executive Decision Dashboard Method
 
-将  相关资料转化为可审查的决策界面，而不是把报告装饰成网页。
+Turn the relevant materials into a reviewable decision interface rather than decorating a report as a web page.
 
-## 核心流程
+## Core Process
 
-1. 定义决策：明确决策人、时间范围和候选项。
-2. 建立证据表：标记事实、推断或假设，并保存来源。
-3. 设计评分：统一指标方向和量纲，公开权重与计算方法。
-4. 加入反方：展示最强反对理由、数据缺口和改变结论的条件。
-5. 设计情景：至少提供增长、利润、风险三种价值偏好。
-6. 渐进表达：首屏只给决策和关键依据，详细证据按需展开。
-7. 验证交互：确认权重、排名、解释和来源同步更新。
+1. Define the decision: identify the decision-maker, time horizon, and options.
+2. Build an evidence table: label each item as Fact, Inference, or Assumption and retain its source.
+3. Design the scoring model: align metric direction and units, and disclose weights and calculations.
+4. Add the counterpoint: show the strongest counterargument, Data Gaps, and conditions that would change the conclusion.
+5. Design scenarios: provide at least Growth-first, Profit-first, and Risk-first value preferences.
+6. Communicate progressively: show only the decision and key evidence above the fold; reveal detailed evidence on demand.
+7. Validate interactions: confirm that weights, rankings, explanations, and sources update together.
 
-推荐使用“建议 → 依据 → 风险 → 下一步”结构。事实必须可追溯；推断需说明依据；假设必须显式标记。
+Use the “Recommendation → Evidence → Risks → Next Steps” structure. Facts must be traceable; inferences must explain their basis; assumptions must be labeled explicitly.
 
-需要计算时读取 [references/scoring.md](references/scoring.md)；需要页面结构时读取 [templates/page-outline.md](templates/page-outline.md)。
+Read [references/scoring.md](references/scoring.md) when calculations are needed and [templates/page-outline.md](templates/page-outline.md) when page structure is needed.
 
-完成标准：30 秒知道建议，5 分钟理解依据与风险；战略偏好变化后排名和解释一致更新；关键数字可回到来源；页面声明模型限制。
+Definition of done: the recommendation is clear within 30 seconds, and the evidence and risks are understandable within five minutes; rankings and explanations update consistently when strategic preferences change; key figures trace back to sources; and the page states the model's limitations.

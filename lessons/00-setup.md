@@ -1,60 +1,60 @@
-# 第 0 课：认识任务与环境
+# Lesson 0: Understand the Task and Environment
 
-**用时：5–8 分钟**
+**Time: 5–8 minutes**
 
-## 学习目标
+## Learning Objectives
 
-- 知道 Claude Code 可以读取并操作一个完整项目，而不只是回答问题。
-- 确认课程文件完整。
-- 建立“先给目标和约束，不急着指定代码”的习惯。
+- Understand that Claude Code can read and work with an entire project, not just answer questions.
+- Confirm that the course files are complete.
+- Build the habit of defining the outcome and constraints before prescribing code.
 
-## 步骤 1：进入项目
+## Step 1: Enter the Project
 
-在终端运行：
+Run in the terminal:
 
 ```bash
 cd /Users/bytedance/Agent-Demo
 claude
 ```
 
-如果你已经在本目录的 Claude Code 会话中，不需要重新启动。
+If you already have a Claude Code session open in this directory, you do not need to restart it.
 
-## 步骤 2：让 Agent 介绍项目
+## Step 2: Ask the Agent to Introduce the Project
 
-输入 Claude Code：
+Enter in Claude Code:
 
 ```text
-请先不要修改任何文件。浏览这个项目，用不超过 8 行告诉我：
-1. 我的业务任务是什么；
-2. 有哪些输入资料；
-3. 项目配置了哪些 Claude Code 能力；
-4. 我最终要交付什么。
+Do not modify any files yet. Explore this project and tell me in no more than eight lines:
+1. What is my business task?
+2. What input materials are available?
+3. Which Claude Code capabilities are configured in the project?
+4. What must I ultimately deliver?
 ```
 
-### 观察
+### Observe
 
-Agent 应该主动读取多个文件，而不是要求你逐一复制内容。这是 Coding Agent 与普通聊天窗口最直观的区别之一。
+The Agent should proactively read multiple files instead of asking you to paste them one by one. This is one of the clearest differences between a Coding Agent and a conventional chat window.
 
-## 步骤 3：运行课程检查
+## Step 3: Run the Course Check
 
-在终端运行：
+Run in the terminal:
 
 ```bash
 python3 checks/check-project.py setup
 ```
 
-看到 `PASS` 才进入下一课。
+Continue to the next lesson only after you see `PASS`.
 
-## 检查点
+## Checkpoint
 
-你现在应该能回答：
+You should now be able to answer:
 
-- Agent 的工作对象是什么？——整个项目中的文件和工具。
-- 为什么先说“不要修改文件”？——在进入正式 Planning 前建立边界。
+- What does the Agent work on? — The files and tools in the entire project.
+- Why say “do not modify files” first? — To establish a boundary before entering formal Planning.
 
-## 遇到问题
+## Troubleshooting
 
-- 找不到 `claude`：请先安装并登录 Claude Code。
-- 检查器报告文件缺失：不要创建自己的同名文件，先让讲师重新分发课程目录。
+- `claude` is not found: install and sign in to Claude Code first.
+- The checker reports missing files: do not create replacement files yourself; ask the instructor to redistribute the course directory.
 
-下一步：[`01-planning.md`](01-planning.md)
+Next: [`01-planning.md`](01-planning.md)

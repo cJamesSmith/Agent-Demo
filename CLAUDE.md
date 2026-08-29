@@ -1,37 +1,37 @@
-# 72 小时出海决策室
+# 72-Hour Global Expansion Decision Room
 
-这是一个使用完全虚构数据的 Claude Code 教学项目。目标是把 `inputs/` 中的业务资料转化为面向企业高管的交互式决策网页。
+This Claude Code learning project uses entirely fictional data. Its goal is to transform the business materials in `inputs/` into an interactive executive decision dashboard.
 
-## 受众与表达
+## Audience and Communication
 
-- 默认使用简体中文。
-- 受众是非技术管理者，结论优先，细节渐进展开。
-- 避免技术术语、大段文字和未经解释的评分。
-- 重要建议使用“建议 → 依据 → 风险 → 下一步”结构。
+- Use English by default.
+- The audience is non-technical executives; lead with conclusions and reveal details progressively.
+- Avoid technical jargon, long blocks of text, and unexplained scores.
+- Structure important recommendations as “Recommendation → Evidence → Risks → Next Steps.”
 
-## 决策完整性
+## Decision Integrity
 
-- 明确标记事实、推断和假设，不能相互冒充。
-- 关键数字必须能追溯到 `inputs/` 中的来源。
-- 不得隐藏数据缺口或将有限样本表达为确定事实。
-- 推荐必须同时展示最强反对理由。
-- 评分结果是情景模拟，不是市场预测或投资建议。
+- Clearly label facts, inferences, and assumptions; never present one as another.
+- Key figures must be traceable to sources in `inputs/`.
+- Do not hide data gaps or present limited samples as certain facts.
+- Every recommendation must include the strongest counterargument.
+- Scores are scenario simulations, not market forecasts or investment advice.
 
-## 工程边界
+## Engineering Boundaries
 
-- 学生交付物放在根目录 `site/`。
-- 不修改 `inputs/`、`reference/` 或课程说明来让检查通过。
-- 使用纯 HTML、CSS、JavaScript，不依赖外部 CDN、框架、后端或网络请求。
-- 页面需支持键盘、窄屏和 `prefers-reduced-motion`。
-- 红色只用于风险或警告，不只依赖颜色传递含义。
+- Place the student deliverable in the root-level `site/` directory.
+- Do not modify `inputs/`, `reference/`, or course instructions merely to make checks pass.
+- Use plain HTML, CSS, and JavaScript with no external CDN, framework, backend, or network requests.
+- The page must support keyboard navigation, narrow screens, and `prefers-reduced-motion`.
+- Use red only for risks or warnings, and never rely on color alone to communicate meaning.
 
-## 工作方式
+## Workflow
 
-- 复杂实现先规划并等待批准；小而明确的修改直接完成。
-- 分析型 Subagents 默认只读，由主 Agent 综合并修改文件。
-- 完成后如实报告运行过的检查；未执行的检查不得声称通过。
+- Plan complex implementations and wait for approval; make small, unambiguous changes directly.
+- Analytical Subagents are read-only by default; the main Agent synthesizes their findings and edits files.
+- Accurately report which checks were run when work is complete; never claim an unrun check passed.
 
-## 常用检查
+## Common Checks
 
 ```bash
 python3 checks/check-project.py setup

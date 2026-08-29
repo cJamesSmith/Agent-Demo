@@ -1,92 +1,92 @@
-# 讲师指南
+# Instructor Guide
 
-## 教学目标
+## Learning Objective
 
-这不是 HTML 课程。学生通过一个可见成果，学习如何治理和使用 Coding Agent：给目标、装载组织背景、复用方法、委派专家、审批计划、验证结果。
+This is not an HTML course. Students learn how to govern and use a Coding Agent by producing a visible deliverable: define an outcome, load organizational context, reuse a method, delegate to specialists, approve a plan, and verify the result.
 
-## 推荐节奏
+## Recommended Schedule
 
-### 25–35 分钟高管演示版
+### 25–35 Minute Executive Demo
 
-| 时间 | 动作 | 讲解重点 |
+| Time | Action | Teaching Point |
 |---:|---|---|
-| 0–3 | 展示 `inputs/` | Agent 面对的是项目和资料，不只是聊天 |
-| 3–6 | `/memory` | 持续生效的组织规则 |
-| 6–10 | `/plan`，展示并修订计划 | 人在执行前审批范围和风险 |
-| 10–14 | `/executive-dashboard` | 方法论按需加载，可被团队复用 |
-| 14–18 | 并行三个 Subagents | 虚拟跨职能团队与最小权限 |
-| 18–25 | 使用参考成品或现场构建 | 从资料到可运行决策工具 |
-| 25–29 | 切换情景和高管变更 | 软件可被自然语言持续修改 |
-| 29–33 | `/code-review`、`/rewind` | 不只生成，还要审查和恢复 |
-| 33–35 | 六要素总结 | Prompt/Memory/Skill/Subagent/Planning/Command |
+| 0–3 | Show `inputs/` | The Agent works with a project and its materials, not just a chat |
+| 3–6 | `/memory` | Organizational rules that remain in effect |
+| 6–10 | `/plan`; show and revise the plan | People approve scope and risk before execution |
+| 10–14 | `/executive-dashboard` | Methodology loads on demand and can be reused across a team |
+| 14–18 | Run three Subagents in parallel | A virtual cross-functional team with least privilege |
+| 18–25 | Use the reference implementation or build live | Turn source material into a working decision tool |
+| 25–29 | Switch scenarios and introduce an executive change | Software can evolve through natural-language instructions |
+| 29–33 | `/code-review`, `/rewind` | Review and recover instead of only generating |
+| 33–35 | Summarize the six elements | Prompt / Memory / Skill / Subagent / Planning / Command |
 
-快速版建议提前生成 `site/`，现场只做一个小修改。完整现场生成受网络和模型延迟影响。
+For the accelerated version, generate `site/` in advance and make only one small change live. A complete live build depends on network and model latency.
 
-### 60–90 分钟动手版
+### 60–90 Minute Hands-On Workshop
 
-让学生按 `lessons/00` 到 `07` 独立完成。建议两人一组：一人扮演业务负责人，一人担任风险审批者。
+Have students complete `lessons/00` through `07` independently. Pairs work well: one person acts as the business owner and the other as the risk approver.
 
-## 讲解句式
+## Teaching Analogies
 
-- Planning：**“先让数字团队提交施工方案，再授权它动手。”**
-- Memory：**“这是每次上班都会读到的员工手册。”**
-- Skill：**“把优秀员工的方法变成组织可复用的标准作业程序。”**
-- Subagents：**“主 Agent 是项目经理，专业 Agent 是临时组建的职能团队。”**
-- Slash Commands：**“控制台入口，让你查看、审查、恢复和切换工作方式。”**
+- Planning: **“Ask the digital team to submit a construction plan before authorizing the work.”**
+- Memory: **“This is the employee handbook read at the start of every workday.”**
+- Skill: **“Turn an excellent employee's method into a reusable organizational standard.”**
+- Subagents: **“The main Agent is the project manager; specialist Agents are a temporary functional team.”**
+- Slash Commands: **“The control panel for inspecting, reviewing, recovering, and switching work modes.”**
 
-## 建议向学生提问
+## Suggested Discussion Questions
 
-1. 如果推荐市场发生变化，是数据变了还是价值偏好变了？
-2. CFO 挑战者应该有写文件权限吗？为什么？
-3. 为什么评分公式不应该只存在于聊天记录？
-4. Agent 说“已完成”和浏览器真的可用有什么区别？
-5. 哪些企业知识适合 Memory，哪些更适合 Skill？
+1. If the recommended market changes, did the data change or did the value priorities change?
+2. Should the CFO challenger have permission to write files? Why or why not?
+3. Why should the scoring formula exist somewhere other than the chat transcript?
+4. What is the difference between the Agent saying “done” and the website actually working?
+5. Which enterprise knowledge belongs in Memory, and which belongs in a Skill?
 
-## 演示故障预案
+## Demo Contingencies
 
-### Skill 没出现
+### The Skill Does Not Appear
 
-1. 确认路径为 `.claude/skills/executive-dashboard/SKILL.md`。
-2. 运行 `/reload-skills`。
-3. 仍失败时让 Agent直接读取该文件，继续课程，课后检查版本。
+1. Confirm the path is `.claude/skills/executive-dashboard/SKILL.md`.
+2. Run `/reload-skills`.
+3. If it still fails, ask the Agent to read the file directly, continue the course, and investigate the version afterward.
 
-### Subagent 未自动触发
+### A Subagent Does Not Start Automatically
 
-使用 `prompts/delegate-analysis.txt` 明确点名角色。必要时直接要求“使用 market-analyst subagent”。
+Use `prompts/delegate-analysis.txt` to name each role explicitly. If necessary, directly request: “Use the market-analyst subagent.”
 
-### 网页生成太慢
+### Website Generation Is Too Slow
 
-切换到 `reference/site/`：
+Switch to `reference/site/`:
 
 ```bash
 python3 -m http.server 8000
 ```
 
-打开 `http://localhost:8000/reference/site/`，说明这是同一计划的预生成兜底版本。
+Open `http://localhost:8000/reference/site/` and explain that this is a pre-generated fallback built from the same plan.
 
-### 网页打不开
+### The Website Does Not Open
 
-- 确认命令在项目根目录执行；
-- 检查端口是否被占用，改用 `python3 -m http.server 8765`；
-- 不要直接用 `file://`，部分浏览器行为与本地服务器不同。
+- Confirm that the command is running from the project root.
+- Check whether the port is occupied; if so, use `python3 -m http.server 8765`.
+- Do not open the site through `file://`; some browser behavior differs from a local server.
 
-### `/diff` 不可用
+### `/diff` Is Unavailable
 
-本课程分发目录可能不是 Git 仓库。改为让 Agent列出新建文件，并运行 `python3 checks/check-project.py student`。真实团队项目应在 Git 中使用 `/diff`。
+The distributed course directory might not be initialized as a Git repository. Ask the Agent to list the new files in `site/`, then run `python3 checks/check-project.py student`. Use `/diff` with Git in real team projects.
 
-## 安全与真实性
+## Safety and Authenticity
 
-- 所有业务材料均为虚构。
-- 不鼓励学生上传真实财务、客户或员工数据。
-- 对外发布、部署、发送消息和删除数据不在本课程范围内。
-- 参考成品是教学说明，不是市场投资建议。
+- All business materials are fictional.
+- Do not encourage students to upload real financial, customer, or employee data.
+- External publication, deployment, messaging, and data deletion are outside this course's scope.
+- The reference implementation is an instructional example, not market or investment advice.
 
-## 成功标准
+## Success Criteria
 
-学生最终不必能手写 JavaScript，但必须能：
+Students do not need to write JavaScript by hand, but they must be able to:
 
-- 给出可检验的目标和约束；
-- 评审而不是盲批 Agent 计划；
-- 说明五项功能的不同职责；
-- 通过运行、审查和证据追溯判断结果质量；
-- 将同样的方法迁移到一个真实业务场景。
+- Define a testable outcome and constraints.
+- Review an Agent plan instead of approving it blindly.
+- Explain the distinct responsibility of each of the five capabilities.
+- Judge output quality through execution, review, and evidence traceability.
+- Apply the same method to a real business scenario.

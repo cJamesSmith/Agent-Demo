@@ -1,6 +1,6 @@
 const markets = [
   {
-    name: "越南",
+    name: "Vietnam",
     size: 720,
     growth: 24,
     cac: 18,
@@ -9,11 +9,11 @@ const markets = [
     regulation: 55,
     execution: 48,
     confidence: 84,
-    summary: "增长快、获客估算低",
-    counter: "市场教育与双语客户成功投入，可能使真实获客成本高于研究估计。"
+    summary: "Fast growth and low estimated acquisition cost",
+    counter: "Market education and bilingual customer-success investment may push actual acquisition costs above the research estimate."
   },
   {
-    name: "印度尼西亚",
+    name: "Indonesia",
     size: 1350,
     growth: 19,
     cac: 27,
@@ -22,11 +22,11 @@ const markets = [
     regulation: 68,
     execution: 64,
     confidence: 76,
-    summary: "规模最大、需求面广",
-    counter: "地域分散、集成和渠道要求可能显著拉长回本周期。"
+    summary: "Largest scale and broad demand",
+    counter: "Geographic dispersion, integration work, and channel requirements may significantly lengthen the payback period."
   },
   {
-    name: "泰国",
+    name: "Thailand",
     size: 610,
     growth: 12,
     cac: 22,
@@ -35,24 +35,24 @@ const markets = [
     regulation: 39,
     execution: 35,
     confidence: 90,
-    summary: "毛利高、落地更可预测",
-    counter: "市场增长较慢，替换成熟供应商需要更清晰的产品差异化。"
+    summary: "High margin and more predictable execution",
+    counter: "Slower market growth and entrenched vendors require clearer product differentiation."
   }
 ];
 
 const dimensions = [
-  { key: "growthPotential", label: "增长潜力" },
-  { key: "profitability", label: "盈利能力" },
-  { key: "competitionEnvironment", label: "竞争环境" },
-  { key: "regulatorySafety", label: "监管风险" },
-  { key: "executionFeasibility", label: "执行可行性" }
+  { key: "growthPotential", label: "Growth Potential" },
+  { key: "profitability", label: "Profitability" },
+  { key: "competitionEnvironment", label: "Competitive Environment" },
+  { key: "regulatorySafety", label: "Regulatory Risk" },
+  { key: "executionFeasibility", label: "Execution Feasibility" }
 ];
 
 const scenarios = {
-  growth: { label: "增长优先", weights: [40, 20, 15, 10, 15] },
-  profit: { label: "利润优先", weights: [15, 40, 10, 15, 20] },
-  risk: { label: "风险优先", weights: [10, 20, 10, 35, 25] },
-  cashflow: { label: "现金流优先", weights: [10, 35, 10, 20, 25] }
+  growth: { label: "Growth-first", weights: [40, 20, 15, 10, 15] },
+  profit: { label: "Profit-first", weights: [15, 40, 10, 15, 20] },
+  risk: { label: "Risk-first", weights: [10, 20, 10, 35, 25] },
+  cashflow: { label: "Cash-flow-first", weights: [10, 35, 10, 20, 25] }
 };
 
 let activeScenario = "growth";
@@ -117,11 +117,11 @@ function strongestAdvantages(leader, runnerUp) {
 }
 
 function recommendationSentence(leader, advantages) {
-  const advantageText = advantages.slice(0, 2).map((item) => item.label).join("与");
+  const advantageText = advantages.slice(0, 2).map((item) => item.label).join(" and ");
   if (activeScenario === "cashflow") {
-    return `${leader.name}在${advantageText || "当前权重"}上更符合现金流可预测性要求；相比增长情景，模型更重视盈利、监管与执行。`;
+    return `${leader.name} better meets cash-flow predictability requirements on ${advantageText || "the current weights"}; compared with the growth scenario, the model places more emphasis on profitability, regulation, and execution.`;
   }
-  return `${leader.name}在${advantageText || "当前加权维度"}之间形成当前情景下的最佳平衡。`;
+  return `${leader.name} offers the best balance across ${advantageText || "the currently weighted dimensions"} in this scenario.`;
 }
 
 function renderSummary(ranking) {
@@ -131,20 +131,20 @@ function renderSummary(ranking) {
   const advantages = strongestAdvantages(leader, runnerUp);
   const sensitive = gap < 5 || leader.confidence < 80;
 
-  document.querySelector("#active-scenario-label").textContent = scenarios[activeScenario]?.label || "自定义权重";
+  document.querySelector("#active-scenario-label").textContent = scenarios[activeScenario]?.label || "Custom weights";
   document.querySelector("#recommended-market").textContent = leader.name;
   document.querySelector("#recommended-score").textContent = leader.score.toFixed(1);
   document.querySelector("#recommendation-copy").textContent = recommendationSentence(leader, advantages);
-  document.querySelector("#score-gap").textContent = `领先第二名 ${gap.toFixed(1)} 分`;
+  document.querySelector("#score-gap").textContent = `${gap.toFixed(1)} points ahead of second place`;
   document.querySelector("#counter-argument").textContent = leader.counter;
 
   const badge = document.querySelector("#sensitivity-badge");
-  badge.textContent = sensitive ? "结论敏感" : "相对稳健";
+  badge.textContent = sensitive ? "Sensitive conclusion" : "Relatively robust";
   badge.className = `status ${sensitive ? "sensitive" : "stable"}`;
 
   const reasons = advantages.length
-    ? advantages.map((item) => `${item.label}相对第二名领先 ${item.gap.toFixed(1)} 分。`)
-    : ["当前各维度表现接近，需要额外证据再做不可逆投入。"];
+    ? advantages.map((item) => `${item.label} leads second place by ${item.gap.toFixed(1)} points.`)
+    : ["Performance is similar across the current dimensions; gather more evidence before making an irreversible investment."];
   document.querySelector("#top-reasons").innerHTML = reasons.map((reason) => `<li>${reason}</li>`).join("");
 }
 
@@ -160,8 +160,8 @@ function renderMarketCards(ranking) {
         <h3>${market.name}</h3>
         <p>${market.summary}</p>
         <div class="score-track" aria-hidden="true"><div class="score-fill" style="width:${market.score}%"></div></div>
-        <div class="dimension-mini"><span>最强维度</span><strong>${strongest.label} ${strongest.score.toFixed(0)}</strong></div>
-        <div class="dimension-mini"><span>数据置信度</span><strong>${market.confidence}%</strong></div>
+        <div class="dimension-mini"><span>Strongest dimension</span><strong>${strongest.label} ${strongest.score.toFixed(0)}</strong></div>
+        <div class="dimension-mini"><span>Data confidence</span><strong>${market.confidence}%</strong></div>
       </article>`;
   });
   document.querySelector("#market-cards").innerHTML = cards.join("");
@@ -188,7 +188,7 @@ function renderWeightControls() {
         <span>${dimension.label}</span>
         <output id="output-${dimension.key}" for="weight-${dimension.key}">${currentWeights[index]}%</output>
       </label>
-      <input id="weight-${dimension.key}" data-index="${index}" type="range" min="0" max="80" step="1" value="${currentWeights[index]}" aria-label="${dimension.label}权重">
+      <input id="weight-${dimension.key}" data-index="${index}" type="range" min="0" max="80" step="1" value="${currentWeights[index]}" aria-label="${dimension.label} weight">
     </div>`).join("");
 
   document.querySelectorAll(".weight-control input").forEach((input) => {

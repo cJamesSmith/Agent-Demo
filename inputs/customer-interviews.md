@@ -1,37 +1,37 @@
-# 客户访谈摘要
+# Customer Interview Summary
 
-> 虚构教学资料。2026 年 5–6 月，共 24 位潜在客户，每个市场 8 位。样本不具统计代表性。
+> Fictional instructional material. Twenty-four prospective customers were interviewed from May through June 2026, eight in each market. The sample is not statistically representative.
 
-## 越南
+## Vietnam
 
-- 6/8 位受访者表示愿意尝试能减少重复行政工作的 AI 工具。
-- 5/8 位把“本地语言支持”列为采购前提。
-- 4/8 位担心跨境数据存储。
-- 一家 300 人规模的零售商称：如果部署能在两周内完成，可接受每用户每月 12–18 美元。
+- 6/8 interviewees said they would try an AI tool that reduces repetitive administrative work.
+- 5/8 identified local-language support as a purchasing prerequisite.
+- 4/8 expressed concern about cross-border data storage.
+- A retailer with 300 employees said it would accept $12–18 per user per month if deployment could be completed within two weeks.
 
-**研究员观察（推断）**：早期采用意愿较高，但支持和实施承诺可能抬高服务成本。
+**Researcher observation (Inference)**: Early adoption interest is relatively high, but support and implementation commitments may increase service costs.
 
-## 印度尼西亚
+## Indonesia
 
-- 7/8 位对产品概念感兴趣，是三组中最高。
-- 6/8 位要求 WhatsApp 或本地主流协作工具集成。
-- 5/8 位认为总部之外的支付审批较慢。
-- 两位受访者给出的价格接受度相差超过 3 倍。
+- 7/8 expressed interest in the product concept, the highest of the three groups.
+- 6/8 required integration with WhatsApp or a leading local collaboration tool.
+- 5/8 said payment approvals outside headquarters were slow.
+- The price ranges accepted by two interviewees differed by more than threefold.
 
-**研究员观察（推断）**：需求面广，但客群分散，统一产品和定价可能更难。
+**Researcher observation (Inference)**: Demand is broad, but the customer base is fragmented, which could make a standardized product and pricing model more difficult.
 
-## 泰国
+## Thailand
 
-- 5/8 位已有同类工具试点经验。
-- 6/8 位重视本地合作伙伴提供实施与培训。
-- 3/8 位认为切换供应商的短期收益不明显。
-- 受访企业普遍能描述清晰预算和采购流程。
+- 5/8 had already piloted a similar tool.
+- 6/8 valued implementation and training from a local partner.
+- 3/8 saw no clear short-term benefit from switching vendors.
+- Interviewed companies could generally describe clear budgets and procurement processes.
 
-**研究员观察（推断）**：采购成熟、落地可预测，但竞争替换成本较高。
+**Researcher observation (Inference)**: Procurement is mature and implementation is predictable, but the cost of replacing competitors is relatively high.
 
-## 数据缺口
+## Data Gaps
 
-- 访谈集中在首都和大型企业。
-- 未验证中小企业需求。
-- 没有真实付费或留存数据。
-- 报价问题的问法在三个市场略有不同，不宜直接横向比较。
+- Interviews focused on capital cities and large enterprises.
+- Small and midsize business demand has not been validated.
+- There is no real payment or retention data.
+- Pricing questions were phrased somewhat differently across the three markets, so direct comparisons are inappropriate.

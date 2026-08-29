@@ -1,12 +1,12 @@
-请独立审查 site/，先不要修改文件。
+Independently review site/ without modifying any files first.
 
-按严重程度检查：
-1. 评分方向、归一化和权重总和是否正确；
-2. 显示的数据、来源和输入文件是否一致；
-3. 推荐解释是否可能把推断或假设写成事实；
-4. 情景切换和滑块的边界情况；
-5. 键盘操作、语义结构、颜色对比和 reduced-motion；
-6. 手机宽度下的溢出与可读性；
-7. 是否意外使用外部资源或网络请求。
+Check in severity order:
+1. Whether scoring directions, normalization, and the weight total are correct.
+2. Whether displayed data and sources match the input files.
+3. Whether recommendation explanations could present an inference or assumption as fact.
+4. Edge cases in scenario switching and sliders.
+5. Keyboard controls, semantic structure, color contrast, and reduced-motion support.
+6. Overflow and readability at mobile widths.
+7. Any accidental use of external resources or network requests.
 
-只报告可复现的问题。每个问题包含文件、位置、触发步骤、影响和最小修复建议。若没有发现问题，明确说明检查范围和仍未验证的部分。
+Report only reproducible issues. For each issue, include the file, location, reproduction steps, impact, and the smallest suggested fix. If you find no issues, state the scope you checked and what remains unverified.

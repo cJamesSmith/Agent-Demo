@@ -1,34 +1,34 @@
-# 风险委员会备忘录
+# Risk Committee Memo
 
-> 虚构教学资料。分数为初步判断，不构成法律、税务或投资意见。
+> Fictional instructional material. Scores are preliminary judgments and do not constitute legal, tax, or investment advice.
 
-## 越南
+## Vietnam
 
-- **监管**：数据跨境流程仍需本地法律复核。
-- **执行**：双语客户成功人才供给有限。
-- **财务**：价格接受度尚未通过真实交易验证。
-- **缓释动作**：先做不含敏感数据的 6 周试点；签约前完成数据流评估。
+- **Regulation**: Cross-border data processes still require local legal review.
+- **Execution**: The supply of bilingual customer-success talent is limited.
+- **Financial**: Willingness to pay has not been validated through actual transactions.
+- **Mitigation action**: Begin with a six-week pilot that excludes sensitive data; complete a data-flow assessment before signing a contract.
 
-## 印度尼西亚
+## Indonesia
 
-- **监管**：多行业客户的合规要求差异较大。
-- **执行**：地域分散和集成需求增加交付复杂度。
-- **财务**：最大市场不等于最短回本周期。
-- **缓释动作**：限定首发行业与城市；只支持两项核心集成。
+- **Regulation**: Compliance requirements vary substantially across customer industries.
+- **Execution**: Geographic dispersion and integration requirements increase delivery complexity.
+- **Financial**: The largest market does not necessarily offer the shortest payback period.
+- **Mitigation action**: Limit the initial launch to one industry and city; support only two core integrations.
 
-## 泰国
+## Thailand
 
-- **监管**：三者中路径最清晰，但仍需确认行业特定要求。
-- **执行**：合作伙伴模式降低初始团队负担，也会让出部分毛利。
-- **财务**：增长较慢，需防止稳定性掩盖长期天花板。
-- **缓释动作**：用联合销售试点验证转化率和分成模型。
+- **Regulation**: The path is the clearest of the three, but industry-specific requirements still need confirmation.
+- **Execution**: A partner-led model reduces the initial burden on the team but gives up some gross margin.
+- **Financial**: Slower growth means predictability must not obscure the long-term ceiling.
+- **Mitigation action**: Use a joint-sales pilot to validate conversion rates and the revenue-sharing model.
 
-## 风险委员会要求
+## Risk Committee Requirements
 
-最终建议必须同时展示：
+The final recommendation must show all of the following:
 
-1. 推荐市场及选择理由；
-2. 最强反对理由；
-3. 结论依赖的关键假设；
-4. 在 30 天内可以验证的证据；
-5. 如果数据置信度下降，决策是否会改变。
+1. The recommended market and reasons for choosing it;
+2. The strongest counterargument;
+3. The key assumptions on which the conclusion depends;
+4. Evidence that can be validated within 30 days;
+5. Whether the decision would change if data confidence declined.

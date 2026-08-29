@@ -1,43 +1,43 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="虚构东南亚市场进入高管决策网页">
+  <meta name="description" content="Executive decision dashboard for a fictional Southeast Asian market-entry case">
   <meta name="theme-color" content="#173f35">
-  <title>72 小时出海决策室</title>
+  <title>72-Hour Global Expansion Decision Room</title>
   <link rel="stylesheet" href="styles.css">
   <script src="app.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">跳到主要内容</a>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
   <header class="hero">
-    <nav class="topbar" aria-label="页面导航">
-      <a class="brand" href="#main" aria-label="返回决策摘要">
+    <nav class="topbar" aria-label="Page navigation">
+      <a class="brand" href="#main" aria-label="Return to the decision summary">
         <span class="brand-mark" aria-hidden="true">72</span>
         <span>Decision Room</span>
       </a>
       <div class="top-links">
-        <a href="#simulator">情景模拟</a>
-        <a href="#evidence">证据与假设</a>
+        <a href="#simulator">Scenario simulator</a>
+        <a href="#evidence">Evidence and assumptions</a>
       </div>
     </nav>
 
     <div class="hero-grid">
       <div>
         <p class="kicker">MARKET ENTRY · EXECUTIVE BRIEF</p>
-        <h1>东南亚市场进入<br><em>决策室</em></h1>
-        <p class="hero-copy">把分散的研究资料转化为一个可调整、可追溯、可质疑的管理决策。</p>
+        <h1>Southeast Asia Market Entry<br><em>Decision Room</em></h1>
+        <p class="hero-copy">Turn fragmented research into a management decision that can be adjusted, traced, and challenged.</p>
       </div>
       <div class="hero-meta">
-        <div><span>候选市场</span><strong>03</strong></div>
-        <div><span>决策维度</span><strong>05</strong></div>
-        <div><span>研究置信度</span><strong>76–90%</strong></div>
+        <div><span>Candidate markets</span><strong>03</strong></div>
+        <div><span>Decision dimensions</span><strong>05</strong></div>
+        <div><span>Research confidence</span><strong>76–90%</strong></div>
       </div>
     </div>
 
-    <p class="data-notice"><span aria-hidden="true">●</span> 教学演示：所有公司、人物和数据均为虚构，不用于真实经营或投资决策。</p>
+    <p class="data-notice"><span aria-hidden="true">●</span> Instructional demonstration: all companies, people, and data are fictional and must not be used for real business or investment decisions.</p>
   </header>
 
   <main id="main">
@@ -47,34 +47,34 @@
         <div class="section-heading">
           <div>
             <p class="section-label">EXECUTIVE DECISION</p>
-            <h2 id="summary-title">当前建议</h2>
+            <h2 id="summary-title">Current recommendation</h2>
           </div>
-          <span class="scenario-pill" id="active-scenario-label">增长优先</span>
+          <span class="scenario-pill" id="active-scenario-label">Growth-first</span>
         </div>
 
         <div class="decision-grid">
           <div class="decision-primary">
-            <p class="micro-label">建议优先进入</p>
+            <p class="micro-label">Recommended market to enter first</p>
             <div class="recommendation-line">
-              <strong id="recommended-market">越南</strong>
+              <strong id="recommended-market">Vietnam</strong>
               <span id="recommended-score">65.3</span>
             </div>
-            <p class="decision-copy" id="recommendation-copy">越南在增长速度、获客成本与竞争环境之间形成当前最优平衡。</p>
+            <p class="decision-copy" id="recommendation-copy">Vietnam currently offers the best balance of growth, customer acquisition cost, and competitive conditions.</p>
             <div class="confidence-row">
-              <span id="sensitivity-badge" class="status stable">相对稳健</span>
-              <span id="score-gap">领先第二名 12.9 分</span>
+              <span id="sensitivity-badge" class="status stable">Relatively robust</span>
+              <span id="score-gap">12.9 points ahead of second place</span>
             </div>
           </div>
 
           <div class="decision-reasons">
-            <h3>为什么是它</h3>
+            <h3>Why this market</h3>
             <ol id="top-reasons"></ol>
           </div>
         </div>
 
         <div class="challenge-strip">
-          <span class="tag tag-risk">反对理由</span>
-          <p id="counter-argument">市场教育与双语客户成功投入，可能使真实获客成本高于研究估计。</p>
+          <span class="tag tag-risk">Counterargument</span>
+          <p id="counter-argument">Market education and bilingual customer-success investment may push actual acquisition costs above the research estimate.</p>
         </div>
       </div>
     </section>
@@ -85,32 +85,32 @@
         <div class="section-heading">
           <div>
             <p class="section-label">MARKET COMPARISON</p>
-            <h2 id="ranking-title">三种市场，不同取舍</h2>
+            <h2 id="ranking-title">Three markets, different trade-offs</h2>
           </div>
-          <p>综合得分随战略权重实时变化</p>
+          <p>Composite scores update in real time as strategic weights change</p>
         </div>
         <div class="market-cards" id="market-cards"></div>
 
         <details class="metric-details">
-          <summary>查看原始指标与来源</summary>
-          <div class="table-scroll" tabindex="0" aria-label="原始市场指标，可横向滚动">
+          <summary>View raw metrics and sources</summary>
+          <div class="table-scroll" tabindex="0" aria-label="Raw market metrics; scroll horizontally to view all columns">
             <table>
               <thead>
                 <tr>
-                  <th scope="col">市场</th>
-                  <th scope="col">规模</th>
-                  <th scope="col">三年 CAGR</th>
-                  <th scope="col">获客成本</th>
-                  <th scope="col">毛利率</th>
-                  <th scope="col">竞争度</th>
-                  <th scope="col">监管复杂度</th>
-                  <th scope="col">数据置信度</th>
+                  <th scope="col">Market</th>
+                  <th scope="col">Size</th>
+                  <th scope="col">Three-year CAGR</th>
+                  <th scope="col">Acquisition cost</th>
+                  <th scope="col">Gross margin</th>
+                  <th scope="col">Competition</th>
+                  <th scope="col">Regulatory complexity</th>
+                  <th scope="col">Data confidence</th>
                 </tr>
               </thead>
               <tbody id="metrics-body"></tbody>
             </table>
           </div>
-          <p class="source-note">来源：NOVA Research 2026Q2（虚构）；竞争、监管和执行分数均为 0–100，越低越有利。</p>
+          <p class="source-note">Source: NOVA Research 2026 Q2 (fictional). Competition, regulatory, and execution scores range from 0–100; lower is more favorable.</p>
         </details>
       </div>
     </section>
@@ -121,28 +121,28 @@
         <div class="section-heading">
           <div>
             <p class="section-label">SCENARIO SIMULATOR</p>
-            <h2 id="simulator-title">改变价值偏好，观察结论</h2>
+            <h2 id="simulator-title">Change priorities and observe the outcome</h2>
           </div>
-          <div class="weight-total">权重合计 <strong id="weight-total">100%</strong></div>
+          <div class="weight-total">Total weight <strong id="weight-total">100%</strong></div>
         </div>
 
-        <div class="scenario-buttons" role="group" aria-label="选择战略情景">
+        <div class="scenario-buttons" role="group" aria-label="Select a strategic scenario">
           <button class="scenario-button is-active" type="button" data-scenario="growth" aria-pressed="true">
-            <span>01</span><strong>增长优先</strong><small>速度与规模</small>
+            <span>01</span><strong>Growth-first</strong><small>Speed and scale</small>
           </button>
           <button class="scenario-button" type="button" data-scenario="profit" aria-pressed="false">
-            <span>02</span><strong>利润优先</strong><small>毛利与获客</small>
+            <span>02</span><strong>Profit-first</strong><small>Margin and acquisition</small>
           </button>
           <button class="scenario-button" type="button" data-scenario="risk" aria-pressed="false">
-            <span>03</span><strong>风险优先</strong><small>监管与执行</small>
+            <span>03</span><strong>Risk-first</strong><small>Regulation and execution</small>
           </button>
           <button class="scenario-button" type="button" data-scenario="cashflow" aria-pressed="false">
-            <span>04</span><strong>现金流优先</strong><small>上市公司视角</small>
+            <span>04</span><strong>Cash-flow-first</strong><small>Public-company perspective</small>
           </button>
         </div>
 
         <div class="weights-grid" id="weights-grid"></div>
-        <p class="method-note"><strong>计算方法：</strong>原始指标在三个市场内做 0–100 归一化，再按当前五类权重加总。调整一个滑块时，其他权重按比例重分配。</p>
+        <p class="method-note"><strong>Method:</strong> Raw metrics are normalized to a 0–100 scale across the three markets, then combined using the current weights for five dimensions. When one slider changes, the remaining weights are redistributed proportionally.</p>
       </div>
     </section>
 
@@ -152,17 +152,17 @@
         <div class="section-heading">
           <div>
             <p class="section-label">RISK LANDSCAPE</p>
-            <h2 id="risk-title">机会之外，风险在哪里</h2>
+            <h2 id="risk-title">Where the risks sit beyond the opportunity</h2>
           </div>
-          <p>颜色与文字共同表达风险等级</p>
+          <p>Risk levels are conveyed through both color and text</p>
         </div>
-        <div class="risk-table" role="table" aria-label="三国风险热力图">
+        <div class="risk-table" role="table" aria-label="Risk heatmap for the three markets">
           <div class="risk-row risk-header" role="row">
-            <span role="columnheader">市场</span><span role="columnheader">监管</span><span role="columnheader">执行</span><span role="columnheader">商业验证</span>
+            <span role="columnheader">Market</span><span role="columnheader">Regulatory</span><span role="columnheader">Execution</span><span role="columnheader">Commercial validation</span>
           </div>
-          <div class="risk-row" role="row"><strong role="rowheader">越南</strong><span class="risk medium">中</span><span class="risk medium">中</span><span class="risk high">高</span></div>
-          <div class="risk-row" role="row"><strong role="rowheader">印度尼西亚</strong><span class="risk high">高</span><span class="risk high">高</span><span class="risk high">高</span></div>
-          <div class="risk-row" role="row"><strong role="rowheader">泰国</strong><span class="risk low">低</span><span class="risk low">低</span><span class="risk medium">中</span></div>
+          <div class="risk-row" role="row"><strong role="rowheader">Vietnam</strong><span class="risk medium">Medium</span><span class="risk medium">Medium</span><span class="risk high">High</span></div>
+          <div class="risk-row" role="row"><strong role="rowheader">Indonesia</strong><span class="risk high">High</span><span class="risk high">High</span><span class="risk high">High</span></div>
+          <div class="risk-row" role="row"><strong role="rowheader">Thailand</strong><span class="risk low">Low</span><span class="risk low">Low</span><span class="risk medium">Medium</span></div>
         </div>
       </div>
     </section>
@@ -173,28 +173,28 @@
         <div class="section-heading">
           <div>
             <p class="section-label">90-DAY VALIDATION</p>
-            <h2 id="action-title">先验证，再扩大投入</h2>
+            <h2 id="action-title">Validate before expanding investment</h2>
           </div>
-          <p>可停止、可复盘的三阶段动作</p>
+          <p>A three-stage plan designed to pause and review</p>
         </div>
         <div class="timeline">
           <article>
             <div class="timeline-day">DAY <strong>30</strong></div>
-            <h3>验证进入条件</h3>
-            <p>完成数据流与监管路径复核；访谈 3 家潜在合作伙伴；统一报价测试口径。</p>
-            <span>闸门：合规路径可执行</span>
+            <h3>Validate entry conditions</h3>
+            <p>Review data flows and the regulatory path, interview three potential partners, and standardize the pricing test.</p>
+            <span>Gate: the compliance path is executable</span>
           </article>
           <article>
             <div class="timeline-day">DAY <strong>60</strong></div>
-            <h3>运行受控试点</h3>
-            <p>选择一个城市和行业，完成不含敏感数据的 6 周试点，记录实施工时和真实获客成本。</p>
-            <span>闸门：交付成本未超预算</span>
+            <h3>Run a controlled pilot</h3>
+            <p>Select one city and industry for a six-week pilot without sensitive data, then record implementation hours and actual acquisition cost.</p>
+            <span>Gate: delivery cost remains within budget</span>
           </article>
           <article>
             <div class="timeline-day">DAY <strong>90</strong></div>
-            <h3>做扩大或停止决策</h3>
-            <p>用付费转化、激活、实施成本和合作伙伴质量更新模型，并重新比较三个市场。</p>
-            <span>闸门：证据支持规模化</span>
+            <h3>Decide whether to scale or stop</h3>
+            <p>Update the model with paid conversion, activation, implementation cost, and partner quality, then compare all three markets again.</p>
+            <span>Gate: evidence supports scaling</span>
           </article>
         </div>
       </div>
@@ -206,47 +206,47 @@
         <div class="section-heading">
           <div>
             <p class="section-label">EVIDENCE & UNCERTAINTY</p>
-            <h2 id="evidence-title">结论如何形成，也可能如何失效</h2>
+            <h2 id="evidence-title">How the conclusion was formed—and how it could fail</h2>
           </div>
         </div>
 
         <div class="evidence-grid">
           <details open>
-            <summary><span class="tag tag-fact">事实</span> 可追溯输入</summary>
+            <summary><span class="tag tag-fact">Fact</span> Traceable inputs</summary>
             <ul>
-              <li>越南三年 CAGR 为 24%，为三者最高。</li>
-              <li>泰国毛利率估计为 68%，监管复杂度最低。</li>
-              <li>印度尼西亚市场规模最大，但执行难度也最高。</li>
+              <li>Vietnam has the highest three-year CAGR at 24%.</li>
+              <li>Thailand's estimated gross margin is 68%, and it has the lowest regulatory complexity.</li>
+              <li>Indonesia has the largest market but also the greatest execution difficulty.</li>
             </ul>
           </details>
           <details>
-            <summary><span class="tag tag-inference">推断</span> 基于证据的解释</summary>
+            <summary><span class="tag tag-inference">Inference</span> Evidence-based interpretation</summary>
             <ul>
-              <li>越南可能更适合增长导向的早期试点。</li>
-              <li>泰国通过合作伙伴进入，现金流更可预测。</li>
-              <li>印度尼西亚需要先缩小行业与地域范围。</li>
+              <li>Vietnam may be better suited to an early growth-oriented pilot.</li>
+              <li>Partner-led entry in Thailand may offer more predictable cash flow.</li>
+              <li>Indonesia requires a narrower initial industry and geographic scope.</li>
             </ul>
           </details>
           <details>
-            <summary><span class="tag tag-assumption">假设</span> 尚待验证</summary>
+            <summary><span class="tag tag-assumption">Assumption</span> Not yet validated</summary>
             <ul>
-              <li>研究中的获客成本能在真实投放中复现。</li>
-              <li>合作伙伴愿意按可接受的分成比例联合销售。</li>
-              <li>首都大型企业样本可以代表首发客户群。</li>
+              <li>Research-based acquisition costs can be reproduced in real campaigns.</li>
+              <li>Partners are willing to co-sell at an acceptable revenue-share rate.</li>
+              <li>Large-enterprise samples in capital cities represent the initial customer segment.</li>
             </ul>
           </details>
           <details>
-            <summary><span class="tag tag-gap">缺口</span> 当前没有的数据</summary>
+            <summary><span class="tag tag-gap">Data Gap</span> Currently unavailable</summary>
             <ul>
-              <li>没有真实付费、留存和回本周期数据。</li>
-              <li>未验证中小企业需求。</li>
-              <li>报价问题口径不完全一致，不能直接比较。</li>
+              <li>No actual data on payment, retention, or payback period is available.</li>
+              <li>Demand from small and medium-sized businesses has not been validated.</li>
+              <li>Pricing questions were not fully standardized and cannot be compared directly.</li>
             </ul>
           </details>
         </div>
 
         <div class="source-list">
-          <h3>资料来源</h3>
+          <h3>Sources</h3>
           <a href="../../inputs/market-data.csv">market-data.csv</a>
           <a href="../../inputs/customer-interviews.md">customer-interviews.md</a>
           <a href="../../inputs/competitor-analysis.md">competitor-analysis.md</a>

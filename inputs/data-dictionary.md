@@ -1,32 +1,32 @@
-# 市场数据字典
+# Market Data Dictionary
 
-> 所有数据均为虚构教学数据。
+> All data is fictional instructional data.
 
-| 字段 | 单位/范围 | 含义 | 评分方向 |
+| Field | Unit/range | Meaning | Scoring direction |
 |---|---|---|---|
-| `market_size_usd_m` | 百万美元 | 当前可服务市场规模 | 越高越好 |
-| `three_year_cagr_pct` | % | 未来三年复合增长率 | 越高越好 |
-| `customer_acquisition_cost_usd` | 美元 | 获得一个付费客户的估计成本 | 越低越好 |
-| `gross_margin_pct` | % | 稳态毛利率估计 | 越高越好 |
-| `competition_score` | 0–100 | 竞争激烈程度 | 越低越好 |
-| `regulatory_complexity_score` | 0–100 | 监管进入和持续运营复杂度 | 越低越好 |
-| `execution_difficulty_score` | 0–100 | 本地化、渠道、人才和运营综合难度 | 越低越好 |
-| `data_confidence_pct` | % | 研究团队对数据质量的置信度 | 展示，不直接进入基础评分 |
+| `market_size_usd_m` | USD millions | Current serviceable market size | Higher is better |
+| `three_year_cagr_pct` | % | Compound annual growth rate over the next three years | Higher is better |
+| `customer_acquisition_cost_usd` | USD | Estimated cost to acquire one paying customer | Lower is better |
+| `gross_margin_pct` | % | Estimated steady-state gross margin | Higher is better |
+| `competition_score` | 0–100 | Intensity of competition | Lower is better |
+| `regulatory_complexity_score` | 0–100 | Complexity of regulatory entry and ongoing operations | Lower is better |
+| `execution_difficulty_score` | 0–100 | Combined difficulty of localization, channels, talent, and operations | Lower is better |
+| `data_confidence_pct` | % | Research team's confidence in data quality | Display only; do not include directly in the base score |
 
-## 建议的五类决策维度
+## Recommended Decision Dimensions
 
-1. **增长潜力**：市场规模与三年增长率。
-2. **盈利能力**：毛利率与获客成本。
-3. **竞争环境**：竞争分数反向归一化。
-4. **监管风险**：监管复杂度反向归一化。
-5. **执行可行性**：执行难度反向归一化。
+1. **Growth Potential**: market size and three-year growth rate.
+2. **Profitability**: gross margin and customer acquisition cost.
+3. **Competitive Environment**: reverse-normalized competition score.
+4. **Regulatory Risk**: reverse-normalized regulatory complexity.
+5. **Execution Feasibility**: reverse-normalized execution difficulty.
 
-## 归一化规则
+## Normalization Rules
 
-同一指标在三个市场内做 min-max 归一化：
+Apply min-max normalization to each metric across the three markets:
 
-- 正向指标：`(value - min) / (max - min) × 100`
-- 反向指标：`(max - value) / (max - min) × 100`
-- 如果最大值等于最小值，该指标统一记为 50 分。
+- Positive metric: `(value - min) / (max - min) × 100`
+- Reverse metric: `(max - value) / (max - min) × 100`
+- If the maximum equals the minimum, assign 50 points to every market for that metric.
 
-所有计算结果保留一位小数。页面必须明确说明：排名是基于有限输入的情景模拟，不是预测。
+Round all calculated results to one decimal place. The dashboard must state explicitly that rankings are scenario simulations based on limited inputs, not forecasts.
