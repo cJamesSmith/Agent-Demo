@@ -63,7 +63,7 @@ A standard class takes about 60–90 minutes. Instructors can use the accelerate
 
 ## Get CodeBuddy Code
 
-Download or install CodeBuddy Code from the official [installation guide](https://www.codebuddy.ai/docs/zh/cli/installation). The [quick-start guide](https://www.codebuddy.ai/docs/zh/cli/quickstart) covers sign-in and first launch.
+Download or install CodeBuddy Code from the official [installation guide](https://www.codebuddy.ai/docs/zh/ide/Getting-Started/Installation). The [quick-start guide](https://www.codebuddy.ai/docs/zh/cli/quickstart) covers sign-in and first launch.
 
 ## Distinguish Two Types of Input
 
