@@ -10,12 +10,6 @@
 
 ## Step 1: Inspect Memory
 
-Enter in CodeBuddy Code:
-
-```text
-/memory
-```
-
 Select the project Memory and inspect the root-level `CODEBUDDY.md`.
 
 If opening an editor is inconvenient in the classroom environment, enter:
