@@ -61,32 +61,6 @@ Open these files in order:
 
 A standard class takes about 60–90 minutes. Instructors can use the accelerated path in `COURSE-GUIDE.md` to reduce it to 25–35 minutes.
 
-## Get CodeBuddy Code
-
-Download or install CodeBuddy Code from the official [installation guide](https://www.codebuddy.ai/docs/zh/ide/Getting-Started/Installation). The [quick-start guide](https://www.codebuddy.ai/docs/zh/cli/quickstart) covers sign-in and first launch.
-
-## Distinguish Two Types of Input
-
-The course uses these two labels:
-
-**Enter in CodeBuddy Code:**
-
-```text
-Please read the inputs directory first...
-```
-
-**Run in the terminal:**
-
-```bash
-python3 checks/check-project.py setup
-```
-
-If you are already in the CodeBuddy Code interactive interface and need to run a terminal command yourself, enter:
-
-```text
-! python3 checks/check-project.py setup
-```
-
 ## Three Classroom Rules
 
 1. Do not look at `reference/site/` first. It is a fallback, not the starting point for your answer.
