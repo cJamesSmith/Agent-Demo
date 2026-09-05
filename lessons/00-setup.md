@@ -10,17 +10,6 @@
 
 ## Step 1: Enter the Project
 
-Download or install CodeBuddy Code using the official [installation guide](https://www.codebuddy.ai/docs/zh/cli/installation). The official [quick-start guide](https://www.codebuddy.ai/docs/zh/cli/quickstart) covers sign-in and first launch. CodeBuddy Code supports macOS, Linux, and Windows. If you install it through npm, use Node.js 18.20 or later.
-
-Run in the terminal:
-
-```bash
-cd /path/to/Agent-Demo
-codebuddy
-```
-
-On first launch, select the appropriate CodeBuddy site and finish browser sign-in. If you already have a CodeBuddy Code session open in this directory, you do not need to restart it. This course is already configured, so do not run `/init`; it could replace the prepared project Memory.
-
 ## Step 2: Ask the Agent to Introduce the Project
 
 Enter in CodeBuddy Code:
