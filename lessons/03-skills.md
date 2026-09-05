@@ -16,7 +16,7 @@ Enter in CodeBuddy Code:
 /skills
 ```
 
-Find `executive-dashboard`. If it does not appear, restart the CodeBuddy Code session and try again.
+Find `executive-dashboard`. If it does not appear, create it.
 
 ## Step 2: Invoke It Explicitly
 
