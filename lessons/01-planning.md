@@ -1,7 +1,5 @@
 # Lesson 1: Planning—Approve the Approach Before Building
 
-**Time: 10–15 minutes**
-
 ## Learning Objectives
 
 - Let the Agent understand the materials and task in read-only mode.
@@ -10,7 +8,7 @@
 
 ## Step 1: Enter Plan Mode
 
-Press `Shift+Tab` until the CodeBuddy Code status bar shows Plan Mode. On Windows, `Alt+M` is also supported. Use `/plan` later if you need to preview the current plan file.
+CodeBuddy Code shows Plan Mode. Use `/plan` later if you need to preview the current plan file.
 
 > Plan Mode is a permission mode, not merely a prompt. File changes are blocked until the plan is approved.
 
