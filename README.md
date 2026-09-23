@@ -1,72 +1,44 @@
-# 72-Hour Global Expansion Decision Room
+# 乌兹别克斯坦政府团队 AI Agent 实训
 
-> A hands-on course for learning the core CodeBuddy Code workflow by building a real web page.
+11 月 9–12 日，每天当地时间 14:00–17:00。三人一组，全周不换组。当天只用当天那个文件夹。
 
-## Your Role
+- 中文课表：[uzbekistan-ai-agent-week.md](uzbekistan-ai-agent-week.md)
+- English agenda: [uzbekistan-ai-agent-week-en.md](uzbekistan-ai-agent-week-en.md)
+- 学员材料：[materials/](materials/)
+- 核对答案：[materials/instructor-key.md](materials/instructor-key.md)（不要发给学员）
 
-You are not a programmer. You are the company's head of international business. The CEO has asked the team to answer three questions within 72 hours:
+## 四天
 
-1. Which market should we enter first: Vietnam, Indonesia, or Thailand?
-2. What evidence supports the recommendation?
-3. Does the conclusion still hold when strategic priorities change?
+| 日期 | 任务 | 材料 | 成品 |
+| --- | --- | --- | --- |
+| 周一 11 月 9 日 | 撒马尔罕第 3 公共服务中心办事网页 | [`materials/day1-website/`](materials/day1-website/) | `index.html` |
+| 周二 11 月 10 日 | 明天 10:00 的会前简报 | [`materials/day2-briefing/`](materials/day2-briefing/) | `briefing.md`、正好 6 页 `slides.md` |
+| 周三 11 月 11 日 | 本季度只做一个试点 | [`materials/day3-budget/`](materials/day3-budget/) | `dashboard.html` 或 `dashboard.xlsx`，加半页 `memo.md` |
+| 周四 11 月 12 日 | 对外一页、对内流程、三封信 | [`materials/day4-service/`](materials/day4-service/) | `public-page.html`、`internal-sop.md`、`letters.md` |
 
-You will use CodeBuddy Code to turn the fictional business materials in `inputs/` into an interactive executive decision dashboard.
+周二到周四：14:00–14:30 说明任务，14:30–16:00 分组做，16:00–17:00 汇报。汇报只讲结论、出处文件、人改过的一处。
 
-## What You Will Learn
+周一上午段用上次课件第 3–6 页讲 Agent，再讲 WorkBuddy 的工作目录和 Ask / Plan / Craft。细则在中文课表里。
 
-| Capability | Role in This Project | Enterprise Analogy |
-|---|---|---|
-| Planning | Review the materials and submit an implementation plan first | Project initiation and design review |
-| Memory | Continuously follow audience, compliance, and communication rules | Employee handbook |
-| Skills | Reuse a method for building executive decision dashboards | Standard operating procedure |
-| Subagents | Bring in market, finance, and design perspectives in parallel | Cross-functional project team |
-| Slash Commands | Control, inspect, and recover Agent work | Management console |
+## 规则
 
-## Final Deliverable
+1. 材料里没有的费用、时限、法条，写 “to be confirmed”。
+2. 第 3 公共服务中心、会议和全部数字都是练习编的。
+3. 步骤口径来自 [my.gov.uz](https://my.gov.uz) 上的个人创业者登记，以及 2026 年 1 月起公开报道的 “15 分钟开办企业”：材料齐全之后的登记不超过 30 分钟；电子签名、银行账户、收银机不算在这 30 分钟里。
 
-You will produce a `site/` directory containing:
+这些文件不是政府通知，也不是法律意见。
 
-- A CEO summary and recommended market
-- A comparison of key metrics across three countries
-- Growth-first, profit-first, and risk-first strategic scenarios
-- Adjustable weight sliders
-- Rankings and recommendation explanations that update automatically
-- A risk heatmap and 90-day action plan
-- Traceable sources, assumptions, and data gaps
+## English
 
-## Project Map
+AI Agent training for the Uzbekistan government team, 9–12 November, 14:00–17:00 local time. Groups of three stay together all week and use only that day’s folder.
 
-```text
-inputs/       Fictional business materials for the Agent to read
-lessons/      Lessons for students to complete in order
-prompts/      Prompts ready to copy into CodeBuddy Code
-.codebuddy/   Skills and Subagents beyond Memory
-starter/      Incomplete website scaffold
-checks/       Checkpoint validation tools
-reference/    Instructor fallback implementation (do not open yet)
-```
+The day-by-day plan is in [uzbekistan-ai-agent-week-en.md](uzbekistan-ai-agent-week-en.md). Packs are in [`materials/`](materials/). Keep [`materials/instructor-key.md`](materials/instructor-key.md) with the instructor.
 
-## Learning Path
+| Day | Task | Pack | Done |
+| --- | --- | --- | --- |
+| Monday 9 Nov | Service page for Public Services Centre No. 3, Samarkand | [`materials/day1-website/`](materials/day1-website/) | `index.html` |
+| Tuesday 10 Nov | Brief for the next morning’s 10:00 meeting | [`materials/day2-briefing/`](materials/day2-briefing/) | `briefing.md` and a six-slide `slides.md` |
+| Wednesday 11 Nov | One pilot this quarter | [`materials/day3-budget/`](materials/day3-budget/) | `dashboard.html` or `dashboard.xlsx`, plus a half-page `memo.md` |
+| Thursday 12 Nov | Public page, internal procedure, three letters | [`materials/day4-service/`](materials/day4-service/) | `public-page.html`, `internal-sop.md`, `letters.md` |
 
-Open these files in order:
-
-1. [`lessons/00-setup.md`](lessons/00-setup.md) — Understand the project and prepare your environment
-2. [`lessons/01-planning.md`](lessons/01-planning.md) — Plan before changing files
-3. [`lessons/02-memory.md`](lessons/02-memory.md) — Learn the project's persistent rules
-4. [`lessons/03-skills.md`](lessons/03-skills.md) — Invoke an organizational methodology
-5. [`lessons/04-subagents.md`](lessons/04-subagents.md) — Assemble a virtual expert team
-6. [`lessons/05-build.md`](lessons/05-build.md) — Build and run the website
-7. [`lessons/06-slash-commands.md`](lessons/06-slash-commands.md) — Review, compare, and recover
-8. [`lessons/07-reflect.md`](lessons/07-reflect.md) — Reflect and apply the method to real work
-
-A standard class takes about 60–90 minutes. Instructors can use the accelerated path in `COURSE-GUIDE.md` to reduce it to 25–35 minutes.
-
-## Three Classroom Rules
-
-1. Do not look at `reference/site/` first. It is a fallback, not the starting point for your answer.
-2. Do not let the Agent modify the website before you approve the plan.
-3. Do not rely only on what the Agent says. Verify the result in the browser and with checkers and review commands.
-
-## Data Disclaimer
-
-All companies, people, interviews, market figures, and conclusions in this project are fictional and created solely for instruction. They do not represent real market research and must not be used for actual investment or business decisions.
+Centre No. 3, the meetings, and every figure are invented for the exercise. If a fee, deadline, or legal rule is not in the pack, write “to be confirmed”. These files are not a government notice and not legal advice.
