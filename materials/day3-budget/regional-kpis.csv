@@ -1,0 +1,25 @@
+region,month,applications,avg_days_to_operate,return_for_correction_pct,staff,budget_spent_mln_uzs,satisfaction_1_to_5
+Tashkent City,2026-05,1620,4.2,9,46,820,4.3
+Tashkent City,2026-06,1705,4.0,8,46,835,4.4
+Tashkent City,2026-07,1750,3.8,8,48,840,4.4
+Tashkent City,2026-08,1810,4.1,7,48,860,4.5
+Tashkent City,2026-09,1880,3.9,8,48,870,4.4
+Tashkent City,2026-10,1905,3.7,7,50,890,4.5
+Samarkand Region,2026-05,820,12,15,20,410,3.8
+Samarkand Region,2026-06,860,11,14,21,420,3.9
+Samarkand Region,2026-07,880,11,14,22,430,3.9
+Samarkand Region,2026-08,910,10,13,22,440,4.0
+Samarkand Region,2026-09,940,11,14,22,445,3.9
+Samarkand Region,2026-10,960,10,13,23,450,4.0
+Fergana Region,2026-05,980,10,29,24,460,3.5
+Fergana Region,2026-06,1020,9,28,25,470,3.6
+Fergana Region,2026-07,1050,9,27,26,480,3.6
+Fergana Region,2026-08,1100,8,26,26,490,3.7
+Fergana Region,2026-09,1120,9,27,26,500,3.6
+Fergana Region,2026-10,1180,8,25,28,510,3.7
+Republic of Karakalpakstan,2026-05,360,19,13,8,210,3.1
+Republic of Karakalpakstan,2026-06,380,18,12,8,215,3.2
+Republic of Karakalpakstan,2026-07,400,18,12,9,220,3.2
+Republic of Karakalpakstan,2026-08,410,17,11,9,225,3.3
+Republic of Karakalpakstan,2026-09,440,18,12,9,230,3.2
+Republic of Karakalpakstan,2026-10,450,16,11,9,240,3.3
