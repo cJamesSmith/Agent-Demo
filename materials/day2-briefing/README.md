@@ -1,4 +1,4 @@
-# Tuesday task — brief the deputy before tomorrow’s meeting
+# Day 2 task — brief the deputy before tomorrow’s meeting
 
 Training exercise. Use only the files in this folder. Every group has the same pack. Your group’s priority is on the card the instructor gives you:
 

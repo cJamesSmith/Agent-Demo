@@ -1,4 +1,4 @@
-# Wednesday task — one pilot, one service area
+# Day 3 task — one pilot, one service area
 
 Training exercise. Use only the files in this folder.
 

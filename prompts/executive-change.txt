@@ -1,8 +1,0 @@
-The CEO has just changed priorities: the company is publicly listed, and cash flow and predictability over the next 12 months matter more than growth.
-
-Without removing the existing growth-first, profit-first, or risk-first scenarios:
-1. Add a “cash-flow-first” scenario and make it the default.
-2. Reduce the growth-potential weight and increase the weights for profitability, regulatory risk, and execution feasibility.
-3. Explain in one sentence in the recommendation section why the ranking did or did not change.
-4. Preserve all sources, counterarguments, and uncertainties.
-5. Make only the minimum changes required and verify that the existing three scenarios still work.

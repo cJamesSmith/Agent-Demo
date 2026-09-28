@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Structural checks for the CodeBuddy Code learning project."""
+"""Structural checks for the Uzbekistan AI agent week course package."""
 
 from __future__ import annotations
 
+import re
 import sys
 from pathlib import Path
 
@@ -11,218 +12,275 @@ ROOT = Path(__file__).resolve().parents[1]
 SETUP_FILES = [
     "README.md",
     "CODEBUDDY.md",
-    "COURSE-GUIDE.md",
-    "inputs/market-data.csv",
-    "inputs/customer-interviews.md",
-    "inputs/competitor-analysis.md",
-    "inputs/risk-memo.md",
-    "inputs/data-dictionary.md",
-    ".codebuddy/skills/executive-dashboard/SKILL.md",
-    ".codebuddy/skills/executive-dashboard/references/scoring.md",
-    ".codebuddy/skills/executive-dashboard/templates/page-outline.md",
-    ".codebuddy/agents/market-analyst.md",
-    ".codebuddy/agents/cfo-challenger.md",
-    ".codebuddy/agents/executive-designer.md",
+    "uzbekistan-ai-agent-week-en.md",
+    "uzbekistan-ai-agent-week.md",
+    "lessons/00-agent-basics.md",
+    "lessons/01-tool-calls.md",
+    "lessons/02-rag-memory.md",
+    "lessons/03-planning-workflow-multiagent.md",
+    "lessons/04-group-project.md",
+    "materials/README.md",
+    "materials/instructor-key.md",
+    "materials/instructor-prep.md",
+    "materials/presentation-rubric.md",
+    "materials/role-cards.md",
+    "prompts/day1-weak-prompt.txt",
+    "prompts/day1-strong-prompt.txt",
+    "prompts/plan.txt",
+    "prompts/inspect-memory.txt",
+    "prompts/delegate-analysis.txt",
+    "prompts/build-dashboard.txt",
+    "prompts/priority-change.txt",
+    "prompts/review.txt",
+    ".codebuddy/skills/decision-brief/SKILL.md",
+    ".codebuddy/skills/decision-brief/references/claim-checking.md",
+    ".codebuddy/skills/decision-brief/templates/briefing-outline.md",
+    ".codebuddy/skills/pilot-dashboard/SKILL.md",
+    ".codebuddy/skills/pilot-dashboard/references/comparison-rules.md",
+    ".codebuddy/agents/source-checker.md",
+    ".codebuddy/agents/resident-advocate.md",
+    ".codebuddy/agents/decision-challenger.md",
 ]
 
-LESSON_FILES = [f"lessons/{index:02d}-{name}.md" for index, name in enumerate([
-    "setup",
-    "planning",
-    "memory",
-    "skills",
-    "subagents",
-    "build",
-    "slash-commands",
-    "reflect",
-])]
+PACKS = {
+    "day1-website": [
+        "README.md",
+        "centre-facts.md",
+        "do-not-invent.md",
+        "resident-questions.txt",
+    ],
+    "day2-briefing": [
+        "README.md",
+        "draft-decision.md",
+        "minutes-03-nov.md",
+        "minutes-05-nov.md",
+        "october-snapshot.csv",
+        "october-snapshot.md",
+        "old-deck.md",
+        "public-comments.md",
+    ],
+    "day3-budget": [
+        "README.md",
+        "budget-note.md",
+        "priority-memo.md",
+        "regional-kpis.csv",
+        "regional-kpis.xlsx",
+    ],
+    "day4-benefits": [
+        "README.md",
+        "applicant-cases.md",
+        "do-not-invent.md",
+        "eligibility-rules.md",
+        "intake-notes.md",
+    ],
+    "day4-service": [
+        "README.md",
+        "agreed-sentences.md",
+        "desk-rota.md",
+        "refusal-rules.md",
+        "service-facts.md",
+        "three-cases.md",
+    ],
+    "day4-complaints": [
+        "README.md",
+        "complaints.md",
+        "desk-notes.md",
+        "do-not-invent.md",
+        "routing-rules.md",
+    ],
+    "day4-consultation": [
+        "README.md",
+        "do-not-invent.md",
+        "draft-articles.md",
+        "responses.csv",
+        "responses.md",
+        "weighting-rules.md",
+    ],
+    "day4-interagency": [
+        "README.md",
+        "agency-a-centre.md",
+        "agency-b-tax.md",
+        "agency-c-sanitary.md",
+        "do-not-invent.md",
+        "resident-diaries.md",
+    ],
+}
 
-UNSUPPORTED_LESSON_TOKENS = [
-    "/diff",
-    "/run",
-    "/reload-skills",
-    "/code-review high",
+# Day 4 topic -> the deliverables a team must produce.
+PROJECT_DELIVERABLES = {
+    "benefits": [
+        "eligibility-guide.md",
+        "case-assessments.md",
+        "information-requests.md",
+    ],
+    "service": ["public-page.html", "internal-sop.md", "letters.md"],
+    "complaints": ["triage.md", "replies.md", "escalations.md"],
+    "consultation": ["synthesis.md", "decision-note.md", "response-table.md"],
+    "interagency": ["journey.md", "interagency-sop.md", "conflicts.md"],
+}
+
+# Files whose relative markdown links must resolve on disk.
+LINK_SOURCES = [
+    "README.md",
+    "uzbekistan-ai-agent-week-en.md",
+    "uzbekistan-ai-agent-week.md",
+    "materials/README.md",
+    "materials/instructor-prep.md",
+    "checks/README.md",
 ]
 
-SITE_MARKERS = {
-    "index.html": [
-        "executive-summary",
-        "market-comparison",
-        "scenario-simulator",
-        "risk-heatmap",
-        "action-plan",
-        "evidence",
-    ],
-    "styles.css": ["prefers-reduced-motion"],
-    "app.js": ["normalize", "calculate", "render"],
-}
+LINK_PATTERN = re.compile(r"\[[^\]]*\]\(([^)]+)\)")
 
-REFERENCE_MARKERS = {
-    "index.html": [
-        "recommended-market",
-        "market-cards",
-        "weights-grid",
-        "risk-table",
-        "evidence-grid",
-        "aria-pressed",
-    ],
-    "styles.css": ["@media", "prefers-reduced-motion", "overflow-x"],
-    "app.js": [
-        "rebalanceWeights",
-        "calculateRanking",
-        "renderDashboard",
-        "cashflow",
-    ],
-}
+# Names from the retired market-dashboard course. Any survivor is a stale reference.
+STALE_TOKENS = [
+    "WorkBuddy",
+    "Southeast Asia",
+    "executive-dashboard",
+    "market-analyst",
+    "cfo-challenger",
+    "executive-designer",
+    "inputs/",
+]
+
+STALE_SCAN_SUFFIXES = {".md", ".txt", ".py"}
+STALE_SKIP_DIRS = {".git", "node_modules"}
+
+# These two describe the stale tokens, so they are allowed to contain them.
+STALE_SKIP_FILES = {Path("checks/check-project.py"), Path("checks/README.md")}
 
 
-def pass_line(message: str) -> None:
-    print(f"PASS  {message}")
+def _report(label: str, problems: list[str]) -> bool:
+    if problems:
+        print(f"FAIL  {label}")
+        for problem in problems:
+            print(f"      {problem}")
+        return False
+    print(f"OK    {label}")
+    return True
 
 
-def fail_line(message: str) -> None:
-    print(f"FAIL  {message}")
-
-
-def check_files(relative_paths: list[str]) -> list[str]:
-    failures = []
-    for relative_path in relative_paths:
-        path = ROOT / relative_path
-        if path.is_file() and path.stat().st_size > 0:
-            pass_line(relative_path)
-        else:
-            fail_line(f"Missing or empty: {relative_path}")
-            failures.append(relative_path)
-    return failures
-
-
-def check_markers(site_directory: Path, markers: dict[str, list[str]]) -> list[str]:
-    failures = []
-    for filename, expected_markers in markers.items():
-        path = site_directory / filename
-        if not path.is_file():
-            fail_line(f"Missing: {path.relative_to(ROOT)}")
-            failures.append(str(path))
-            continue
-
-        content = path.read_text(encoding="utf-8")
-        missing = [marker for marker in expected_markers if marker not in content]
-        if missing:
-            fail_line(f"{path.relative_to(ROOT)} missing markers: {', '.join(missing)}")
-            failures.extend(f"{path}:{marker}" for marker in missing)
-        else:
-            pass_line(f"{path.relative_to(ROOT)} required structure")
-    return failures
-
-
-def check_no_external_reference_assets() -> list[str]:
-    failures = []
-    site = ROOT / "reference/site"
-    for filename in ("index.html", "styles.css", "app.js"):
-        path = site / filename
-        content = path.read_text(encoding="utf-8")
-        forbidden = [
-            token for token in ("https://", "http://", "fetch(", "XMLHttpRequest")
-            if token in content
-        ]
-        if forbidden:
-            fail_line(f"{path.relative_to(ROOT)} contains external dependencies: {', '.join(forbidden)}")
-            failures.extend(f"{path}:{token}" for token in forbidden)
-        else:
-            pass_line(f"{path.relative_to(ROOT)} has no external network dependencies")
-    return failures
-
-
-def check_codebuddy_lessons() -> list[str]:
-    failures = []
-    combined = "\n".join(
-        (ROOT / relative_path).read_text(encoding="utf-8")
-        for relative_path in LESSON_FILES
-    )
-    found = [token for token in UNSUPPORTED_LESSON_TOKENS if token in combined]
-    if found:
-        fail_line(f"Lessons contain legacy or unsupported instructions: {', '.join(found)}")
-        failures.extend(f"lessons:{token}" for token in found)
-    else:
-        pass_line("Lessons contain no known legacy or unsupported commands")
-
-    required = [
-        "codebuddy",
-        "CODEBUDDY.md",
-        ".codebuddy/skills/",
-        "Shift+Tab",
-        "/agents",
-        "/code-review site/",
-        "/rewind",
+def check_setup() -> bool:
+    missing = [name for name in SETUP_FILES if not (ROOT / name).is_file()]
+    empty = [
+        name
+        for name in SETUP_FILES
+        if (ROOT / name).is_file() and (ROOT / name).stat().st_size == 0
     ]
-    missing = [token for token in required if token not in combined]
-    if missing:
-        fail_line(f"Lessons are missing CodeBuddy workflow markers: {', '.join(missing)}")
-        failures.extend(f"lessons:{token}" for token in missing)
-    else:
-        pass_line("Lessons include the required CodeBuddy workflow")
-    return failures
+    return _report(
+        "setup: course files present",
+        [f"missing: {name}" for name in missing] + [f"empty: {name}" for name in empty],
+    )
 
 
-def run_setup() -> list[str]:
-    print("\n[Course and CodeBuddy Code Configuration]")
-    failures = check_files(SETUP_FILES + LESSON_FILES)
-    failures.extend(check_codebuddy_lessons())
-
-    codebuddy_md = (ROOT / "CODEBUDDY.md").read_text(encoding="utf-8")
-    if "fictional" in codebuddy_md.lower() and "fact" in codebuddy_md.lower() and "assumption" in codebuddy_md.lower():
-        pass_line("CODEBUDDY.md includes truthfulness and evidence rules")
-    else:
-        fail_line("CODEBUDDY.md is missing truthfulness or evidence rules")
-        failures.append("CODEBUDDY.md:rules")
-
-    for agent_name in ("market-analyst", "cfo-challenger", "executive-designer"):
-        content = (ROOT / f".codebuddy/agents/{agent_name}.md").read_text(encoding="utf-8")
-        if "tools: Read, Grep, Glob" in content:
-            pass_line(f"{agent_name} uses read-only tools")
-        else:
-            fail_line(f"{agent_name} does not retain a read-only tool scope")
-            failures.append(f"agent:{agent_name}:tools")
-    return failures
+def check_packs() -> bool:
+    problems: list[str] = []
+    for pack, files in PACKS.items():
+        folder = ROOT / "materials" / pack
+        if not folder.is_dir():
+            problems.append(f"missing pack folder: materials/{pack}")
+            continue
+        for name in files:
+            path = folder / name
+            if not path.is_file():
+                problems.append(f"missing: materials/{pack}/{name}")
+            elif path.stat().st_size == 0:
+                problems.append(f"empty: materials/{pack}/{name}")
+    return _report("packs: every pack has its declared files", problems)
 
 
-def run_student() -> list[str]:
-    print("\n[Student Site]")
-    site = ROOT / "site"
-    if not site.exists():
-        fail_line("site/ has not been created. Complete Lesson 5 before running the student check.")
-        return ["site"]
-    return check_markers(site, SITE_MARKERS)
+def check_links() -> bool:
+    problems: list[str] = []
+    sources = list(LINK_SOURCES) + sorted(
+        str(path.relative_to(ROOT)) for path in (ROOT / "lessons").glob("*.md")
+    )
+    for source in sources:
+        path = ROOT / source
+        if not path.is_file():
+            problems.append(f"missing link source: {source}")
+            continue
+        for target in LINK_PATTERN.findall(path.read_text(encoding="utf-8")):
+            target = target.split("#", 1)[0].strip()
+            if not target or "://" in target or target.startswith("mailto:"):
+                continue
+            if not (path.parent / target).exists():
+                problems.append(f"{source} -> {target} does not exist")
+    return _report("links: relative markdown links resolve", problems)
 
 
-def run_reference() -> list[str]:
-    print("\n[Reference Site]")
-    failures = check_markers(ROOT / "reference/site", REFERENCE_MARKERS)
-    failures.extend(check_no_external_reference_assets())
-    return failures
+def check_stale() -> bool:
+    problems: list[str] = []
+    for path in sorted(ROOT.rglob("*")):
+        if not path.is_file() or path.suffix not in STALE_SCAN_SUFFIXES:
+            continue
+        relative = path.relative_to(ROOT)
+        if STALE_SKIP_DIRS.intersection(relative.parts):
+            continue
+        if relative in STALE_SKIP_FILES:
+            continue
+        text = path.read_text(encoding="utf-8", errors="replace")
+        for token in STALE_TOKENS:
+            if token in text:
+                problems.append(f"{relative}: stale reference to {token!r}")
+    return _report("stale: no references to the retired course", problems)
 
 
-def main() -> int:
-    mode = sys.argv[1] if len(sys.argv) > 1 else "all"
-    valid_modes = {"setup", "student", "reference", "all"}
-    if mode not in valid_modes:
-        print("Usage: python3 checks/check-project.py [setup|student|reference|all]")
+def check_project(topic: str, folder: Path) -> bool:
+    if topic not in PROJECT_DELIVERABLES:
+        known = ", ".join(sorted(PROJECT_DELIVERABLES))
+        print(f"FAIL  project: unknown topic {topic!r}. Known topics: {known}")
+        return False
+    problems = []
+    for name in PROJECT_DELIVERABLES[topic]:
+        path = folder / name
+        if not path.is_file():
+            problems.append(f"missing: {path}")
+        elif path.stat().st_size == 0:
+            problems.append(f"empty: {path}")
+    return _report(f"project ({topic}): deliverables present in {folder}", problems)
+
+
+def usage() -> None:
+    print(__doc__.strip())
+    print()
+    print("Usage:")
+    print("  python3 checks/check-project.py setup")
+    print("  python3 checks/check-project.py packs")
+    print("  python3 checks/check-project.py links")
+    print("  python3 checks/check-project.py stale")
+    print("  python3 checks/check-project.py course        # the four checks above")
+    print("  python3 checks/check-project.py project <topic> [folder]")
+    print()
+    print("Topics: " + ", ".join(sorted(PROJECT_DELIVERABLES)))
+
+
+def main(argv: list[str]) -> int:
+    if len(argv) < 2:
+        usage()
         return 2
 
-    failures: list[str] = []
-    if mode in {"setup", "all"}:
-        failures.extend(run_setup())
-    if mode in {"student", "all"}:
-        failures.extend(run_student())
-    if mode in {"reference", "all"}:
-        failures.extend(run_reference())
+    command = argv[1]
 
-    print()
-    if failures:
-        print(f"RESULT  {len(failures)} check(s) failed")
-        return 1
-    print("RESULT  All checks passed")
-    return 0
+    if command == "setup":
+        return 0 if check_setup() else 1
+    if command == "packs":
+        return 0 if check_packs() else 1
+    if command == "links":
+        return 0 if check_links() else 1
+    if command == "stale":
+        return 0 if check_stale() else 1
+    if command == "course":
+        results = [check_setup(), check_packs(), check_links(), check_stale()]
+        return 0 if all(results) else 1
+    if command == "project":
+        if len(argv) < 3:
+            usage()
+            return 2
+        folder = Path(argv[3]).resolve() if len(argv) > 3 else Path.cwd()
+        return 0 if check_project(argv[2], folder) else 1
+
+    usage()
+    return 2
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    sys.exit(main(sys.argv))

@@ -1,44 +1,57 @@
-# 乌兹别克斯坦政府团队 AI Agent 实训
+# AI Agent Training for the Uzbekistan Government Team
 
-11 月 9–12 日，每天当地时间 14:00–17:00。三人一组，全周不换组。当天只用当天那个文件夹。
+9–12 November, 14:00–17:00 local time each day. Groups of three stay together all week.
 
-- 中文课表：[uzbekistan-ai-agent-week.md](uzbekistan-ai-agent-week.md)
-- English agenda: [uzbekistan-ai-agent-week-en.md](uzbekistan-ai-agent-week-en.md)
-- 学员材料：[materials/](materials/)
-- 核对答案：[materials/instructor-key.md](materials/instructor-key.md)（不要发给学员）
+Days 1 to 3 each teach one technique and then practise it on that day's pack. Day 4 is the group project and the final presentation.
 
-## 四天
+- Agenda: [uzbekistan-ai-agent-week-en.md](uzbekistan-ai-agent-week-en.md) · [中文](uzbekistan-ai-agent-week.md)
+- Teaching modules: [lessons/](lessons/)
+- Participant packs: [materials/](materials/)
+- Presentation requirements and scoring: [materials/presentation-rubric.md](materials/presentation-rubric.md)
+- Run sheet and preparation: [materials/instructor-prep.md](materials/instructor-prep.md) (keep with the instructor)
+- Answer checks: [materials/instructor-key.md](materials/instructor-key.md) (keep with the instructor)
+- Day 2 role cards: [materials/role-cards.md](materials/role-cards.md) (print and cut; hand out one card per group)
 
-| 日期 | 任务 | 材料 | 成品 |
-| --- | --- | --- | --- |
-| 周一 11 月 9 日 | 撒马尔罕第 3 公共服务中心办事网页 | [`materials/day1-website/`](materials/day1-website/) | `index.html` |
-| 周二 11 月 10 日 | 明天 10:00 的会前简报 | [`materials/day2-briefing/`](materials/day2-briefing/) | `briefing.md`、正好 6 页 `slides.md` |
-| 周三 11 月 11 日 | 本季度只做一个试点 | [`materials/day3-budget/`](materials/day3-budget/) | `dashboard.html` 或 `dashboard.xlsx`，加半页 `memo.md` |
-| 周四 11 月 12 日 | 对外一页、对内流程、三封信 | [`materials/day4-service/`](materials/day4-service/) | `public-page.html`、`internal-sop.md`、`letters.md` |
+## The week
 
-周二到周四：14:00–14:30 说明任务，14:30–16:00 分组做，16:00–17:00 汇报。汇报只讲结论、出处文件、人改过的一处。
+| Day | Topic | Module | Pack | Done |
+| --- | --- | --- | --- | --- |
+| Day 1 — Mon 9 Nov | Agent fundamentals and tool-calls | [`01-tool-calls.md`](lessons/01-tool-calls.md) | [`day1-website/`](materials/day1-website/) | `index.html` |
+| Day 2 — Tue 10 Nov | Retrieval, knowledge base, and memory | [`02-rag-memory.md`](lessons/02-rag-memory.md) | [`day2-briefing/`](materials/day2-briefing/) | `briefing.md` and a six-slide `slides.md` |
+| Day 3 — Wed 11 Nov | Planning, workflow, and multiple agents | [`03-planning-workflow-multiagent.md`](lessons/03-planning-workflow-multiagent.md) | [`day3-budget/`](materials/day3-budget/) | `dashboard.html` or `dashboard.xlsx`, plus a half-page `memo.md` |
+| Day 4 — Thu 12 Nov | Group project | [`04-group-project.md`](lessons/04-group-project.md) | one of five topics | three deliverables and a 5–10 minute presentation |
 
-周一上午段用上次课件第 3–6 页讲 Agent，再讲 WorkBuddy 的工作目录和 Ask / Plan / Craft。细则在中文课表里。
+Days 2 and 3: 14:00–15:00 teaching and a live demonstration, 15:00–16:30 group work, 16:30–17:00 debrief.
 
-## 规则
+Day 1 starts twenty-five minutes earlier in the material: [`lessons/00-agent-basics.md`](lessons/00-agent-basics.md) runs 14:00–14:25 on what an agent is, how to read a tool call, and the read-only boundary; teaching runs 14:25–15:10, and the lab starts at 15:10.
 
-1. 材料里没有的费用、时限、法条，写 “to be confirmed”。
-2. 第 3 公共服务中心、会议和全部数字都是练习编的。
-3. 步骤口径来自 [my.gov.uz](https://my.gov.uz) 上的个人创业者登记，以及 2026 年 1 月起公开报道的 “15 分钟开办企业”：材料齐全之后的登记不超过 30 分钟；电子签名、银行账户、收银机不算在这 30 分钟里。
+Day 4: 14:00–14:20 brief and topic allocation, 14:20–16:00 group work, 16:00–17:00 presentations.
 
-这些文件不是政府通知，也不是法律意见。
+## Day 4 topics
 
-## English
+| Topic | Pack | Deliverables |
+| --- | --- | --- |
+| Benefit eligibility advice | [`day4-benefits/`](materials/day4-benefits/) | `eligibility-guide.md`, `case-assessments.md`, `information-requests.md` |
+| Complaint and service-ticket handling | [`day4-complaints/`](materials/day4-complaints/) | `triage.md`, `replies.md`, `escalations.md` |
+| Public service navigation | [`day4-interagency/`](materials/day4-interagency/) | `journey.md`, `interagency-sop.md`, `conflicts.md` |
+| Public consultation synthesis | [`day4-consultation/`](materials/day4-consultation/) | `synthesis.md`, `decision-note.md`, `response-table.md` |
+| Home sewing workshop service | [`day4-service/`](materials/day4-service/) | `public-page.html`, `internal-sop.md`, `letters.md` |
 
-AI Agent training for the Uzbekistan government team, 9–12 November, 14:00–17:00 local time. Groups of three stay together all week and use only that day’s folder.
+## Rules
 
-The day-by-day plan is in [uzbekistan-ai-agent-week-en.md](uzbekistan-ai-agent-week-en.md). Packs are in [`materials/`](materials/). Keep [`materials/instructor-key.md`](materials/instructor-key.md) with the instructor.
+1. Each afternoon uses only that day's folder.
+2. If a fee, deadline, or legal rule is not in the pack, write “to be confirmed”.
+3. Centre No. 3, the meetings, and every figure are invented for the exercise.
+4. The process wording follows individual-entrepreneur registration on [my.gov.uz](https://my.gov.uz) and the public “start a business in 15 minutes” arrangement from January 2026: once an application is complete, registration takes no more than 30 minutes. An electronic signature, a bank account, and a cash register are outside that clock.
 
-| Day | Task | Pack | Done |
-| --- | --- | --- | --- |
-| Monday 9 Nov | Service page for Public Services Centre No. 3, Samarkand | [`materials/day1-website/`](materials/day1-website/) | `index.html` |
-| Tuesday 10 Nov | Brief for the next morning’s 10:00 meeting | [`materials/day2-briefing/`](materials/day2-briefing/) | `briefing.md` and a six-slide `slides.md` |
-| Wednesday 11 Nov | One pilot this quarter | [`materials/day3-budget/`](materials/day3-budget/) | `dashboard.html` or `dashboard.xlsx`, plus a half-page `memo.md` |
-| Thursday 12 Nov | Public page, internal procedure, three letters | [`materials/day4-service/`](materials/day4-service/) | `public-page.html`, `internal-sop.md`, `letters.md` |
+Every pack contains planted problems — items that must be marked “to be confirmed”, and on Day 4, contradictions between two files in the same folder. Finding them is the exercise.
 
-Centre No. 3, the meetings, and every figure are invented for the exercise. If a fee, deadline, or legal rule is not in the pack, write “to be confirmed”. These files are not a government notice and not legal advice.
+These files are not a government notice and not legal advice.
+
+## Checking the package
+
+```bash
+python3 checks/check-project.py course
+```
+
+See [checks/README.md](checks/README.md).

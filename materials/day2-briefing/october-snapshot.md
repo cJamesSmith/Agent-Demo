@@ -1,6 +1,6 @@
 # October 2026 snapshot — four service areas
 
-Training exercise. Invented figures. Same definition as Wednesday’s workbook.
+Training exercise. Invented figures. Same definition as the Day 3 workbook.
 
 `avg_days_to_operate` is the average number of days from the resident’s first contact to the day they hold a registration certificate and have either an electronic-signature appointment or a submitted bank-account request. It is not the on-screen registration step.
 

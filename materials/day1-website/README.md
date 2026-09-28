@@ -1,4 +1,4 @@
-# Monday task — one public page
+# Day 1 task — one public page
 
 Training exercise. Use only the files in this folder.
 
@@ -17,6 +17,6 @@ Rules:
 
 - If a fee, a waiting time, or a legal limit is not written in the files, print “to be confirmed”.
 - Do not describe this as company (LLC) registration.
-- Footer: `Prepared with WorkBuddy, reviewed by [group names]`.
+- Footer: `Prepared with CodeBuddy Code, reviewed by [group names]`.
 
 Done: `index.html` opens in a browser and a person has checked the phone, hours, and documents against `centre-facts.md`.

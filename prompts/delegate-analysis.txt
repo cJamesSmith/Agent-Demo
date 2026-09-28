@@ -1,21 +1,21 @@
-Explicitly invoke the following three project Subagents to analyze every file under inputs/ in parallel:
+Invoke the following three project subagents in parallel to analyse every file in @materials/day3-budget/. All three are read-only and must not modify any file.
 
-1. market-analyst
-   Validate data direction and scoring logic, identify evidence conflicts and data gaps, and provide preliminary rankings for the three default scenarios.
+1. source-checker
+   Verify the figures in regional-kpis.xlsx against the other files in the pack. Check the Definitions sheet before using any column. Report any column that is easy to misread, any figure whose period or units are unstated, and any claim in the pack that no file supports.
 
-2. cfo-challenger
-   Challenge any conclusion that “the largest or fastest-growing market should come first” from the perspectives of cash flow, payback period, downside scenarios, and opportunity cost.
+2. resident-advocate
+   For each of the four service areas, describe what the figures mean for a resident in that area. Identify which area's residents are worst served, and say which residents the figures cannot see at all.
 
-3. executive-designer
-   Design a single-page information architecture an executive can understand in five minutes. Explain what appears above the fold and what is progressively disclosed.
+3. decision-challenger
+   The deputy's current instruction is that speed comes first. Whichever pilot and area that points to, attack it. Name three variables that would change the ranking, state what the figures cannot show, and say whether the recommendation survives the switch to accuracy as the first priority.
 
-All three Agents are read-only and must not modify any files.
+After all three return, synthesize. Do not concatenate the reports. Produce:
 
-After they finish, have the main Agent synthesize:
-- Shared conclusions across all three roles
-- Key conflicts
-- Final product and scoring decisions adopted
-- Recommendations not adopted and the reasons
-- Assumptions and counterarguments that must appear explicitly on the page
+- What all three agree on.
+- Where they conflict, and which side you took, with your reason.
+- The recommendation you adopted: the option, the area, and the three figures that carry it.
+- The recommendation you rejected, and why.
+- The data gap none of the three could close.
+- Whether the choice holds when the priority changes from speed to accuracy. If it changes, say what it changes to and recalculate — do not re-describe the same conclusion with different adjectives.
 
-Do not simply concatenate the three reports.
+For every figure in your synthesis, name the sheet and the months it came from.

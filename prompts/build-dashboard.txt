@@ -1,13 +1,27 @@
 Begin implementation now.
 
-Requirements:
-1. Create site/index.html, site/styles.css, and site/app.js in the project root.
-2. Use the fictional data in inputs/ without modifying the source materials.
-3. Implement seven sections: CEO summary, market comparison, scenario selector, weight simulator, risk heatmap, 90-day plan, and sources and assumptions.
-4. Provide growth-first, profit-first, and risk-first presets.
-5. When a weight slider changes, proportionally adjust the other dimensions so the total always remains 100%, and update scores, rankings, and recommendation explanations in real time.
-6. Use clear visual labels for facts, inferences, and assumptions.
-7. Make every interaction keyboard accessible, respect prefers-reduced-motion, and prevent page-level horizontal scrolling on narrow screens.
-8. Load no external resources and make no network requests.
-9. Prominently state that all data is fictional and cannot be used for real business decisions.
-10. After implementation, run the available syntax and project checks and report the actual results. Do not claim that unrun checks passed.
+SOURCE BOUNDARY
+Use only the files in @materials/day3-budget/. Do not modify anything in that folder.
+
+DELIVERABLES
+1. dashboard.html in my working folder, opening directly in a browser with no server and no external resources or network requests.
+2. memo.md, half a page.
+
+THE DASHBOARD MUST CONTAIN
+- A comparison table: one row per service area, with the metrics the decision turns on, and the period stated. Include applications per officer, derived, since more staff is one of the options.
+- One chart showing the metric the recommendation turns on, across all four areas, over the months available. One chart, not a gallery.
+- Both priorities, each with its own recalculated answer: speed first, as the deputy currently instructs, and accuracy first, measured by the return-for-correction rate.
+- The option-to-metric mapping from budget-note.md, visible, so a reader can see that the recommended option moves the metric being argued about.
+
+RULES
+- Read the Definitions sheet before using any column. avg_days_to_operate is not the 30-minute registration step.
+- budget_spent_mln_uzs is past operating spend. It is not the price of the pilot. Do not present it as a budget.
+- Do not invent a som price for any option.
+- Name the sheet and the months beside every figure.
+- Label clearly what the figures show and what you have inferred from them.
+
+THE MEMO MUST CONTAIN
+The recommendation in one sentence, three figures that support it, one risk, and one question this workbook cannot answer.
+
+WHEN YOU FINISH
+Report what you actually verified and what you did not. Do not state that a check passed unless you ran it.

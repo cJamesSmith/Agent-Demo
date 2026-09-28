@@ -1,0 +1,34 @@
+You are writing for residents who will read this page at the intake desk of Public Services Centre No. 3, Samarkand. Write for them, not for officials.
+
+SOURCE BOUNDARY
+Use only the files in @materials/day1-website/. Do not use any other file in this project, and do not use general knowledge about business registration in Uzbekistan. If something is not in those files, it is not available to you.
+
+DELIVERABLE
+One file, index.html, in my working folder. It must open directly in a browser with no server and no external resources.
+
+CONTENT
+Cover only the three services in centre-facts.md: individual-entrepreneur registration, a PINFL for a resident who does not have one, and an electronic-signature appointment.
+
+For each service, state what to bring. For the registration, state both channels — Desk A and my.gov.uz after a OneID login — and state exactly which step takes no more than 30 minutes and what that clock excludes.
+
+Show the address 12 Mirzo Ulugbek Street, the phone +998 66 555 01 03, and the opening hours including Saturday.
+
+Answer each of the six questions in resident-questions.txt visibly on the page. A resident must not have to infer an answer.
+
+CONSTRAINTS
+If a fee, a waiting time, or a legal limit is not written in the files, print "to be confirmed". Do not estimate it and do not write a plausible number.
+
+Every item listed in do-not-invent.md must appear as "to be confirmed".
+
+Do not describe this as company or LLC registration. This is individual-entrepreneur registration.
+
+Do not promise that a resident can start operating, open a bank account, or receive a cash register inside 30 minutes.
+
+Footer: Prepared with CodeBuddy Code, reviewed by [group names]
+
+DONE WHEN
+- Each of the six resident questions has a visible answer on the page.
+- Every item in do-not-invent.md reads "to be confirmed".
+- No figure appears on the page that is not in centre-facts.md.
+
+When you finish, list every "to be confirmed" item and, for each, name the file you checked before concluding it was missing.

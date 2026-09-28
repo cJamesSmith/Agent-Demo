@@ -1,30 +1,32 @@
 Do not modify any files yet.
 
-Outcome:
-- Turn the fictional market materials in the inputs directory into a single-page interactive decision dashboard for business executives.
-- The dashboard should answer which market to enter first, why, and whether the conclusion changes when strategic priorities change.
+OUTCOME
+You are the aide to the deputy of the Agency for Public Services. The deputy chairs a meeting tomorrow at 10:00 on why residents are still not experiencing "15 minutes". Produce a brief the deputy can act on.
 
-Constraints:
-- Read the project CODEBUDDY.md and every file under inputs/.
-- Use plain HTML, CSS, and JavaScript without external CDNs, frameworks, backends, or build tools.
-- Create or modify files only under the root-level site/ directory. Do not modify inputs/ or reference/.
-- Support desktop and mobile layouts.
-- Show sources for key figures and clearly separate facts, inferences, and assumptions.
-- Show the strongest counterargument and data gaps alongside the recommendation.
-- Use the direction and normalization rules defined in data-dictionary.md for rankings.
+SOURCE BOUNDARY
+Use only the files in @materials/day2-briefing/. Do not use other days' packs.
 
-Before proposing the plan:
-- Check the inputs for conflicts and missing information.
-- Identify the required page sections, interactions, data structures, and calculation logic.
-- Explain which decisions genuinely require my confirmation.
-- Compare at least two implementation approaches and recommend the one that is more reliable in a classroom setting.
+DELIVERABLES
+- briefing.md, about two pages, with the source filename in parentheses after each conclusion.
+- slides.md, exactly six slides: the question, where the time goes, the evidence, claims to delete, the decision for tomorrow, items that must wait.
 
-The plan must include:
-- Page information architecture and user journey.
-- Scoring model and scenario weights.
-- Specific files and implementation phases.
-- Accessibility, responsiveness, and error handling.
-- Browser acceptance testing, code checks, and success criteria.
-- Risks, non-goals, and fallback options.
+THE BRIEF MUST ANSWER
+1. Where does the time actually go, between the resident's first contact and the point they can operate?
+2. Which claims in old-deck.md are not supported by the other files in the pack? Name the contradicting file for each.
+3. What can the deputy decide tomorrow, and what must wait, and specifically what is each waiting item waiting for?
 
-Submit the plan and wait for my approval. Do not begin implementation.
+BEFORE PROPOSING THE PLAN
+- Read every file in the pack, including both sets of minutes and the public comments.
+- Identify where two source files give different accounts of the same thing. There is at least one. Do not resolve it yet.
+- Check whether any figure in old-deck.md matches the October table, and whether any contradicts it.
+- Note which claims concern something being "already available", since those carry the most public risk.
+
+THE PLAN MUST INCLUDE
+- The structure of both deliverables.
+- How you will present the disagreement between sources, rather than choosing one silently.
+- Which claims you expect to recommend withdrawing, and the file that contradicts each.
+- How you will distinguish what the figures show from what you have inferred.
+- What you will mark "to be confirmed".
+- Which decisions in this task genuinely need my confirmation rather than your judgement.
+
+Submit the plan and wait for my approval. Do not begin writing the deliverables.

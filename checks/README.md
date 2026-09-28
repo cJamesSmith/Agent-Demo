@@ -1,45 +1,48 @@
-# Course Checker
+# Course checker
 
-The checker uses only the Python standard library. It verifies that the course structure and key website hooks are present.
+Uses only the Python standard library. It verifies that the course package is structurally intact. It cannot tell you whether the teaching content is any good.
 
-## Check Course Setup
-
-```bash
-python3 checks/check-project.py setup
-```
-
-Validates the input materials, eight lessons, `CODEBUDDY.md`, the Skill, and three read-only Subagents.
-
-## Check the Student Site
+## Check the whole package
 
 ```bash
-python3 checks/check-project.py student
+python3 checks/check-project.py course
 ```
 
-Run this after Lesson 5 has created `site/` in the project root. It checks key sections and calculation/rendering hooks; it does not prove that the visual design and business logic are fully correct.
+Runs the four checks below. Run this after editing any course file, and before handing packs out.
 
-## Check the Instructor Reference Site
+### `setup`
+
+Every agenda, module, prompt, skill, agent, and instructor file is present and non-empty. That includes the two files the instructor needs before the room fills up: `materials/instructor-prep.md` and `materials/role-cards.md`.
+
+### `packs`
+
+Each of the eight pack folders has its declared files. Catches a pack handed out with a source file missing — which would make the exercise unsolvable and look like a participant error.
+
+### `links`
+
+Every relative Markdown link in the READMEs, both agendas, the instructor run sheet, and the lesson modules resolves on disk. A renamed lesson leaves dangling links in four other files; this is what finds them.
+
+### `stale`
+
+No file still references the retired market-dashboard course — `WorkBuddy`, `Southeast Asia`, `executive-dashboard`, the three old subagent names, or `inputs/`.
+
+## Check a team's Day 4 deliverables
 
 ```bash
-python3 checks/check-project.py reference
+python3 checks/check-project.py project consultation ~/teams/team-3
 ```
 
-Confirms that the reference site includes scenarios, weights, rankings, risks, and evidence structure, and that it has no external network dependencies.
+Topics: `benefits`, `complaints`, `consultation`, `interagency`, `service`. The folder argument defaults to the current directory.
 
-## Run All Checks
+This confirms the three deliverables exist and are non-empty. It says nothing about whether they are correct.
 
-```bash
-python3 checks/check-project.py all
-```
+## What the checker cannot do
 
-Before the student creates `site/`, `all` is expected to fail during the student stage. This is a normal learning checkpoint, not a damaged course package.
+It does not read content. It will pass a page that invents a state fee, a briefing that cites no sources, and a consultation synthesis that counts the duplicate rows. Those are caught by a person, using `materials/instructor-key.md`, and by the participants themselves running `prompts/review.txt`.
 
-## Why Manual Validation Is Still Necessary
+Specifically, still check by hand:
 
-Structural checks cannot find every problem. You must also:
-
-- Switch through every scenario in the browser.
-- Adjust sliders and confirm the total remains 100%.
-- Confirm that the recommendation explanation updates in sync.
-- Test at mobile width and with keyboard controls.
-- Use `/code-review` to check consistency between calculations and evidence.
+- Every item in each pack's `do-not-invent.md` reads "to be confirmed" in the deliverable.
+- Figures trace to the pack, with the file named.
+- A team's own deliverables agree with each other on day counts and document lists.
+- The Day 4 contradiction was found and stated, not silently resolved.

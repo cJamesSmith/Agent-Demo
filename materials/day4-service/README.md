@@ -1,4 +1,4 @@
-# Thursday task — one service, three products
+# Day 4 task — one service, three products
 
 Training exercise. Use only the files in this folder.
 

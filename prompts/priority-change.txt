@@ -1,0 +1,17 @@
+The deputy has changed the instruction. Accuracy now comes first, measured by the return-for-correction rate. Speed is second.
+
+Without removing the speed-first analysis already on the dashboard:
+
+1. Rank the four service areas again on the return-for-correction rate, using every month available in regional-kpis.xlsx, not only October.
+
+2. Re-apply the option-to-metric mapping from budget-note.md. The option that wins under accuracy is the one that moves the return rate, not the one that moves days to operate.
+
+3. State the new recommendation: the option, the area, and the figures that carry it.
+
+4. Say plainly whether the recommendation changed. If it did, that is a finding and belongs at the top of the dashboard — the deputy needs to know the choice depends on the priority before committing a quarter's budget.
+
+5. Recalculate. Do not keep the previous conclusion and change the adjectives around it. If I can find the old recommendation still standing with new wording, this is not done.
+
+6. Keep every source citation, "to be confirmed" item, and stated uncertainty from the first version.
+
+Make the minimum change required and confirm that the speed-first section still works.

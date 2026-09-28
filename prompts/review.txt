@@ -1,12 +1,21 @@
-Independently review site/ without modifying any files first.
+Review my deliverables independently. Do not modify any file yet.
 
-Check in severity order:
-1. Whether scoring directions, normalization, and the weight total are correct.
-2. Whether displayed data and sources match the input files.
-3. Whether recommendation explanations could present an inference or assumption as fact.
-4. Edge cases in scenario switching and sliders.
-5. Keyboard controls, semantic structure, color contrast, and reduced-motion support.
-6. Overflow and readability at mobile widths.
-7. Any accidental use of external resources or network requests.
+Check in this order, most serious first:
 
-Report only reproducible issues. For each issue, include the file, location, reproduction steps, impact, and the smallest suggested fix. If you find no issues, state the scope you checked and what remains unverified.
+1. Any figure, fee, deadline, or document requirement that does not appear in the day's pack. These are inventions and are the most serious problem a public document can have.
+
+2. Any claim whose meaning has drifted from its source. A source saying a step takes no more than 30 minutes once the application is complete does not support a claim that the process takes 30 minutes. Quote the source wording beside my wording.
+
+3. Any place two source files disagree where I have silently chosen one. Name both files.
+
+4. Any conclusion presented as fact that is actually my inference.
+
+5. Any item that should read "to be confirmed" and does not.
+
+6. Any contradiction between my own deliverables — different day counts, different document lists, different deadlines across two files I produced.
+
+7. Any question in the pack that a reader would still have after reading my document.
+
+For each problem, give the file, the location, what is wrong, why it matters, and the smallest fix. Report only problems you can point to.
+
+If you find no problems in a category, say what you checked in that category and what you were unable to verify. Do not tell me the work is good.
